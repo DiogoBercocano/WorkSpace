@@ -6,6 +6,7 @@ namespace Repositorio.Data
 {
     public class EstoqueContext : DbContext
     {
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }

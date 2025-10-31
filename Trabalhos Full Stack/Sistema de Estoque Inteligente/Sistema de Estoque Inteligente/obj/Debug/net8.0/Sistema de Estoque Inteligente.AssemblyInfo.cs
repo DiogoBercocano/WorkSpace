@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sistema de Estoque Inteligente")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e78840cf4d0051759d2fec822b8196206f3b2d92")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a3f2b75c509a98be0728e7476575532b12f4cc6")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sistema de Estoque Inteligente")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sistema de Estoque Inteligente")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
