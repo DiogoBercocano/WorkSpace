@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\repositorio\\classes\\movimentacaorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|solutionrelative:repositorio\\classes\\movimentacaorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\repositorio\\interface\\irepositoriomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|solutionrelative:repositorio\\interface\\irepositoriomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\dominio\\data\\estoquecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|solutionrelative:dominio\\data\\estoquecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\dominio\\modelos\\movimentacaoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|solutionrelative:dominio\\modelos\\movimentacaoestoque.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\repositorio\\classes\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B585606F-2882-4EA3-B9DE-9C9C5AFC5C33}|Repositorio\\Repositorio.csproj|solutionrelative:repositorio\\classes\\produtorepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\dominio\\modelos\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|solutionrelative:dominio\\modelos\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6E1D42A-3F01-42BC-9806-5441927C2074}|Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\sistema de estoque inteligente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6E1D42A-3F01-42BC-9806-5441927C2074}|Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj|solutionrelative:sistema de estoque inteligente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\dominio\\modelos\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|solutionrelative:dominio\\modelos\\fornecedor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\sistema de estoque inteligente\\dominio\\modelos\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{506A0FD2-8B81-4286-AC72-6F5CDC2C8A88}|Dominio\\Dominio.csproj|solutionrelative:dominio\\modelos\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MovimentacaoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Classes\\MovimentacaoRepositorio.cs",
+              "RelativeDocumentMoniker": "Repositorio\\Classes\\MovimentacaoRepositorio.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Classes\\MovimentacaoRepositorio.cs",
+              "RelativeToolTip": "Repositorio\\Classes\\MovimentacaoRepositorio.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAgwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:38:41.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepositorioMovimentacao.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Interface\\IRepositorioMovimentacao.cs",
+              "RelativeDocumentMoniker": "Repositorio\\Interface\\IRepositorioMovimentacao.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Interface\\IRepositorioMovimentacao.cs",
+              "RelativeToolTip": "Repositorio\\Interface\\IRepositorioMovimentacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:38:04.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstoqueContext.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Data\\EstoqueContext.cs",
+              "RelativeDocumentMoniker": "Dominio\\Data\\EstoqueContext.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Data\\EstoqueContext.cs",
+              "RelativeToolTip": "Dominio\\Data\\EstoqueContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:37:14.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MovimentacaoEstoque.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\MovimentacaoEstoque.cs",
+              "RelativeDocumentMoniker": "Dominio\\Modelos\\MovimentacaoEstoque.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\MovimentacaoEstoque.cs",
+              "RelativeToolTip": "Dominio\\Modelos\\MovimentacaoEstoque.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:36:47.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutoRepositorio.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Classes\\ProdutoRepositorio.cs",
+              "RelativeDocumentMoniker": "Repositorio\\Classes\\ProdutoRepositorio.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Repositorio\\Classes\\ProdutoRepositorio.cs",
+              "RelativeToolTip": "Repositorio\\Classes\\ProdutoRepositorio.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAUwBsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:29:44.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Categoria.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Categoria.cs",
+              "RelativeDocumentMoniker": "Dominio\\Modelos\\Categoria.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Categoria.cs",
+              "RelativeToolTip": "Dominio\\Modelos\\Categoria.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:20:26.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Program.cs",
+              "RelativeDocumentMoniker": "Sistema de Estoque Inteligente\\Program.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Program.cs",
+              "RelativeToolTip": "Sistema de Estoque Inteligente\\Program.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAuwEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:16:51.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Produto.cs",
+              "RelativeDocumentMoniker": "Dominio\\Modelos\\Produto.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Produto.cs",
+              "RelativeToolTip": "Dominio\\Modelos\\Produto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:15:01.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Fornecedor.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Fornecedor.cs",
+              "RelativeDocumentMoniker": "Dominio\\Modelos\\Fornecedor.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Dominio\\Modelos\\Fornecedor.cs",
+              "RelativeToolTip": "Dominio\\Modelos\\Fornecedor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-30T23:13:12.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

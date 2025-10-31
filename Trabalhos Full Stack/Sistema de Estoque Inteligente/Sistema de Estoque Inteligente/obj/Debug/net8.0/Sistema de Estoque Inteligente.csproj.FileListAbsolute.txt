@@ -1,0 +1,6 @@
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.csproj.AssemblyReference.cache
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.AssemblyInfoInputs.cache
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.AssemblyInfo.cs
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.csproj.CoreCompileInputs.cache
+C:\Users\dgber\Documents\GitHub\programacao-Full-Stack\Sistema de Estoque Inteligente\Sistema de Estoque Inteligente\obj\Debug\net8.0\Sistema de Estoque Inteligente.sourcelink.json
