@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CjyNqQfVuTg=",
+  "dgSpecHash": "KTn3mb0gpr8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj",
+  "projectFilePath": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dgber\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\dgber\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
