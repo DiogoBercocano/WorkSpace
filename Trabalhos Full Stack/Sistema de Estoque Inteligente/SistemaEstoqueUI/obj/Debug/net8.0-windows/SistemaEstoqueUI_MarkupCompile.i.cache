@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
 C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\App.xaml
-2-216653475
+9485685811
 22-2009162388
-71407480796
-232-2091496383
-LoginWindow.xaml;MainWindow.xaml;
+14-1661342957
+232-1930675610
+CategoriaFormWindow.xaml;CategoriasWindow.xaml;FornecedoresWindow.xaml;FornecedorFormWindow.xaml;LoginWindow.xaml;MainWindow.xaml;MovimentacoesWindow.xaml;ProdutoFormWindow.xaml;ProdutosWindow.xaml;
 
 False
 

@@ -1,0 +1,94 @@
+﻿<!-- CategoriasWindow.xaml -->
+<Window x:Class="SistemaEstoqueUI.CategoriasWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Categorias"
+        Height="400" Width="480"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="#EEF1F4">
+    <Window.Resources>
+        <Style x:Key="RoundedBlueButton" TargetType="Button">
+            <Setter Property="Background" Value="#4A90E2"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#4A90E2"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Width" Value="110"/>
+            <Setter Property="Margin" Value="6 0 0 0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            CornerRadius="12"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            SnapsToDevicePixels="True">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="RoundedGrayButton" TargetType="Button" BasedOn="{StaticResource RoundedBlueButton}">
+            <Setter Property="Background" Value="#6B6B6B"/>
+            <Setter Property="BorderBrush" Value="#565656"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="#F8FAFC" CornerRadius="14" Padding="18">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Content="×"
+                    Width="34" Height="34"
+                    FontSize="18"
+                    FontWeight="Bold"
+                    Foreground="#607080"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Margin="0 0 0 12"
+                    Click="BtnFechar_Click"/>
+            <TextBlock Text="Categorias"
+                       FontSize="22"
+                       FontWeight="Bold"
+                       FontFamily="Segoe UI"
+                       Foreground="#1E2A38"
+                       Margin="0 30 0 14"
+                       Grid.Row="0"/>
+            <DataGrid x:Name="dataGridCategorias"
+                      Grid.Row="1"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      IsReadOnly="True"
+                      SelectionMode="Single"
+                      Margin="0 0 0 12"
+                      Background="White"
+                      BorderBrush="#CAD9E6"
+                      BorderThickness="1"
+                      RowHeight="32">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding CategoriaId}" Width="50"/>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="Adicionar" Style="{StaticResource RoundedBlueButton}" Click="BtnAdicionar_Click"/>
+                <Button Content="Editar" Style="{StaticResource RoundedBlueButton}" Click="BtnEditar_Click"/>
+                <Button Content="Excluir" Style="{StaticResource RoundedGrayButton}" Click="BtnExcluir_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

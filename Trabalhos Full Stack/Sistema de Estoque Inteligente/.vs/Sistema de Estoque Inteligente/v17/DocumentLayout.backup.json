@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B6E1D42A-3F01-42BC-9806-5441927C2074}|Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistema de estoque inteligente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B6E1D42A-3F01-42BC-9806-5441927C2074}|Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente.csproj|solutionrelative:sistema de estoque inteligente\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistemaestoqueui\\movimentacoeswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|solutionrelative:sistemaestoqueui\\movimentacoeswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistemaestoqueui\\movimentacoeswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|solutionrelative:sistemaestoqueui\\movimentacoeswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistemaestoqueui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|solutionrelative:sistemaestoqueui\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistemaestoqueui\\produtoswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|solutionrelative:sistemaestoqueui\\produtoswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|c:\\users\\dgber\\documents\\github\\workspace\\trabalhos full stack\\sistema de estoque inteligente\\sistemaestoqueui\\produtoswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{ACFA97E3-A407-47C3-9684-38BFA2DBF15D}|SistemaEstoqueUI\\SistemaEstoqueUI.csproj|solutionrelative:sistemaestoqueui\\produtoswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -13,7 +29,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
+          "DockedWidth": 186,
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -27,14 +43,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Program.cs",
-              "RelativeDocumentMoniker": "Sistema de Estoque Inteligente\\Program.cs",
-              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\Sistema de Estoque Inteligente\\Program.cs",
-              "RelativeToolTip": "Sistema de Estoque Inteligente\\Program.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAqwEQAAAAAAAAAAAAAAA==",
+              "Title": "MovimentacoesWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MovimentacoesWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SistemaEstoqueUI\\MovimentacoesWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MovimentacoesWindow.xaml.cs",
+              "RelativeToolTip": "SistemaEstoqueUI\\MovimentacoesWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-31T15:11:59.833Z",
+              "WhenOpened": "2025-11-03T13:57:41.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SistemaEstoqueUI\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MainWindow.xaml.cs",
+              "RelativeToolTip": "SistemaEstoqueUI\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T13:53:13.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProdutosWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\ProdutosWindow.xaml.cs",
+              "RelativeDocumentMoniker": "SistemaEstoqueUI\\ProdutosWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\ProdutosWindow.xaml.cs",
+              "RelativeToolTip": "SistemaEstoqueUI\\ProdutosWindow.xaml.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAUwIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T13:48:37.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProdutosWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\ProdutosWindow.xaml",
+              "RelativeDocumentMoniker": "SistemaEstoqueUI\\ProdutosWindow.xaml",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\ProdutosWindow.xaml",
+              "RelativeToolTip": "SistemaEstoqueUI\\ProdutosWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-03T13:48:33.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MovimentacoesWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MovimentacoesWindow.xaml",
+              "RelativeDocumentMoniker": "SistemaEstoqueUI\\MovimentacoesWindow.xaml",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\Trabalhos Full Stack\\Sistema de Estoque Inteligente\\SistemaEstoqueUI\\MovimentacoesWindow.xaml",
+              "RelativeToolTip": "SistemaEstoqueUI\\MovimentacoesWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-03T13:35:35.428Z",
               "EditorCaption": ""
             }
           ]

@@ -1,0 +1,15 @@
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\bin\Debug\net8.0\Dominio.deps.json
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\bin\Debug\net8.0\Dominio.runtimeconfig.json
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\bin\Debug\net8.0\Dominio.dll
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\bin\Debug\net8.0\Dominio.pdb
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.csproj.AssemblyReference.cache
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfoInputs.cache
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.AssemblyInfo.cs
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.sourcelink.json
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.dll
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\refint\Dominio.dll
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.pdb
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\Dominio.genruntimeconfig.cache
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\Dominio\obj\Debug\net8.0\ref\Dominio.dll

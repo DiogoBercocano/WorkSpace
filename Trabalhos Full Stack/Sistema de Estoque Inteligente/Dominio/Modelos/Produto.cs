@@ -17,13 +17,10 @@ namespace Dominio.Models
 
         [Range(0, int.MaxValue, ErrorMessage = "Quantidade não pode ser negativa.")]
         public int QuantidadeEstoque { get; set; }
-
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; } = null!;
-
         public int FornecedorId { get; set; }
         public Fornecedor Fornecedor { get; set; } = null!;
-
         public void Validar()
         {
             var contexto = new ValidationContext(this);

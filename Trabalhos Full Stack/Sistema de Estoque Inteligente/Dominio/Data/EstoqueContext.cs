@@ -12,10 +12,19 @@ namespace Repositorio.Data
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<MovimentacaoEstoque> MovimentacoesEstoque { get; set; }
 
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost;Database=SistemaEstoqueInteligente;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=SISTEMA_ESTOQUE;Trusted_Connection=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Seed: cria o usuário admin com senha 1234
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario { Id = 1, Nome = "admin", Senha = "1234" }
+            );
         }
     }
 }
