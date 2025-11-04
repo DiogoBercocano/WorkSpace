@@ -166,3 +166,5 @@ C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoqu
 C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\obj\Debug\net8.0-windows\FornecedorFormWindow.g.cs
 C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\obj\Debug\net8.0-windows\MovimentacoesWindow.baml
 C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\obj\Debug\net8.0-windows\MovimentacoesWindow.g.cs
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\obj\Debug\net8.0-windows\CadastroWindow.baml
+C:\Users\dgber\Documents\GitHub\WorkSpace\Trabalhos Full Stack\Sistema de Estoque Inteligente\SistemaEstoqueUI\obj\Debug\net8.0-windows\CadastroWindow.g.cs

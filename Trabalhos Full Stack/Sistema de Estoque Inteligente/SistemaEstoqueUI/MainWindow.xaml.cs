@@ -1,7 +1,6 @@
-﻿using System.Linq;
-using System.Windows;
-using Dominio.Models;
-using Repositorio.Data;
+﻿using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media.Animation;
 
 namespace SistemaEstoqueUI
 {
@@ -11,37 +10,52 @@ namespace SistemaEstoqueUI
         {
             InitializeComponent();
         }
-        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+
+        private void BtnLogout_Click(object sender, RoutedEventArgs e)
         {
+            var loginWindow = new LoginWindow();
+            loginWindow.Show();
             this.Close();
         }
-
         private void BtnProdutos_Click(object sender, RoutedEventArgs e)
         {
-            var produtosWindow = new ProdutosWindow();
-            produtosWindow.Owner = this;
-            produtosWindow.ShowDialog();
+            AbrirModal(new ProdutosWindow());
         }
 
         private void BtnCategorias_Click(object sender, RoutedEventArgs e)
         {
-            var categoriasWindow = new CategoriasWindow();
-            categoriasWindow.Owner = this;
-            categoriasWindow.ShowDialog();
+            AbrirModal(new CategoriasWindow());
         }
 
         private void BtnFornecedores_Click(object sender, RoutedEventArgs e)
         {
-            var fornecedoresWindow = new FornecedoresWindow();
-            fornecedoresWindow.Owner = this;
-            fornecedoresWindow.ShowDialog();
+            AbrirModal(new FornecedoresWindow());
         }
-
 
         private void BtnMovimentacoes_Click(object sender, RoutedEventArgs e)
         {
-            var window = new MovimentacoesWindow();
+            AbrirModal(new MovimentacoesWindow());
+        }
+        private void Card_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (sender is FrameworkElement card &&
+                FindResource("CardHoverIn") is Storyboard hoverIn)
+            {
+                hoverIn.Begin(card);
+            }
+        }
+        private void Card_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (sender is FrameworkElement card &&
+                FindResource("CardHoverOut") is Storyboard hoverOut)
+            {
+                hoverOut.Begin(card);
+            }
+        }
+        private void AbrirModal(Window window)
+        {
             window.Owner = this;
+            window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             window.ShowDialog();
         }
     }
