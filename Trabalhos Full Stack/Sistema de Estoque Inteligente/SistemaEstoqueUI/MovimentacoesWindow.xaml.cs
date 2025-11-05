@@ -21,15 +21,41 @@ namespace SistemaEstoqueUI
         {
             using (var context = new EstoqueContext())
             {
-                movimentacoes = new ObservableCollection<MovimentacaoEstoque>(
-                    context.MovimentacoesEstoque
-                        .Include(m => m.Produto)
-                        .OrderByDescending(m => m.DataMovimentacao)
-                        .ToList()
-                );
+                // Ordenado da movimentação mais antiga pra mais nova (para calcular saldo sequencial)
+                var lista = context.MovimentacoesEstoque
+                    .Include(m => m.Produto)
+                    .OrderBy(m => m.DataMovimentacao)
+                    .ToList();
+
+                var extrato = new List<MovimentacaoEstoqueExtrato>();
+                var saldos = new Dictionary<int, int>(); // ProdutoId -> saldo
+
+                foreach (var mov in lista)
+                {
+                    if (!saldos.ContainsKey(mov.ProdutoId))
+                    {
+                        // saldo inicial = 0 ao inserir o produto.
+                        saldos[mov.ProdutoId] = 0;
+                    }
+                    saldos[mov.ProdutoId] += mov.Quantidade;
+
+                    extrato.Add(new MovimentacaoEstoqueExtrato
+                    {
+                        Id = mov.MovimentacaoEstoqueId,
+                        Produto = mov.Produto.Nome,
+                        Tipo = mov.TipoOperacao,
+                        Quantidade = mov.Quantidade,
+                        Data = mov.DataMovimentacao,
+                        SaldoAposMovimentacao = saldos[mov.ProdutoId],
+                        NecessitaReposicao = saldos[mov.ProdutoId] <= 1
+                    });
+                }
+
+                // Exibir do mais novo para o mais antigo (opcional)
+                dataGridMovimentacoes.ItemsSource = extrato.OrderByDescending(e => e.Data).ToList();
             }
-            dataGridMovimentacoes.ItemsSource = movimentacoes;
         }
+
 
         private void BtnFechar_Click(object sender, RoutedEventArgs e)
         {

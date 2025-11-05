@@ -4,6 +4,7 @@
         Title="Cadastro"
         MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         ResizeMode="CanResize"
         WindowStyle="None"
         Background="#F4F6FA"

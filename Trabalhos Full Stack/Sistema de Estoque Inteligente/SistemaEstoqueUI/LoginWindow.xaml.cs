@@ -51,5 +51,11 @@ namespace SistemaEstoqueUI
             cadastro.Show();
             this.Close();
         }
+
+        private void BtnSair_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

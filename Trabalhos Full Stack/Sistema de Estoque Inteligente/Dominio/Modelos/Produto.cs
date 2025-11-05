@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Dominio.Models
 
@@ -16,6 +17,10 @@ namespace Dominio.Models
         public decimal Preco { get; set; }
 
         [Range(0, int.MaxValue, ErrorMessage = "Quantidade não pode ser negativa.")]
+        
+        [NotMapped]
+        public bool NecessitaReposicao { get; set; } 
+
         public int QuantidadeEstoque { get; set; }
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; } = null!;

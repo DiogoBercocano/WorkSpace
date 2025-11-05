@@ -72,30 +72,35 @@ namespace SistemaEstoqueUI
                 return;
             }
 
-            var form = new ProdutoFormWindow(selecionado);
+            // Cria uma cópia do produto selecionado para editar, para evitar problemas de tracking
+            Produto produtoEdicao;
+            using (var context = new EstoqueContext())
+            {
+                produtoEdicao = context.Produtos
+                    .AsNoTracking()
+                    .FirstOrDefault(p => p.ProdutoId == selecionado.ProdutoId);
+            }
+
+            var form = new ProdutoFormWindow(produtoEdicao);
             form.Owner = this;
 
             if (form.ShowDialog() == true)
             {
                 using (var context = new EstoqueContext())
                 {
-                    var produtoOriginal = context.Produtos.AsNoTracking()
+                    // Busca o produto de novo para garantir está com tracking
+                    var produtoOriginal = context.Produtos
                         .FirstOrDefault(p => p.ProdutoId == form.Produto.ProdutoId);
 
-                    context.Produtos.Update(form.Produto);
-                    context.SaveChanges();
-
-                    int delta = form.Produto.QuantidadeEstoque - (produtoOriginal?.QuantidadeEstoque ?? 0);
-                    if (delta != 0)
+                    if (produtoOriginal != null)
                     {
-                        var mov = new MovimentacaoEstoque
-                        {
-                            ProdutoId = form.Produto.ProdutoId,
-                            DataMovimentacao = System.DateTime.Now,
-                            Quantidade = delta,
-                            TipoOperacao = delta > 0 ? "Entrada" : "Saída"
-                        };
-                        context.MovimentacoesEstoque.Add(mov);
+                        // Atualize campo a campo!
+                        produtoOriginal.Nome = form.Produto.Nome;
+                        produtoOriginal.QuantidadeEstoque = form.Produto.QuantidadeEstoque;
+                        produtoOriginal.Preco = form.Produto.Preco;
+                        produtoOriginal.CategoriaId = form.Produto.CategoriaId;
+                        produtoOriginal.FornecedorId = form.Produto.FornecedorId;
+
                         context.SaveChanges();
                     }
                 }
@@ -103,6 +108,7 @@ namespace SistemaEstoqueUI
                 dataGridProdutos.SelectedItem = produtos.FirstOrDefault(p => p.ProdutoId == selecionado.ProdutoId);
             }
         }
+
 
         private void BtnExcluir_Click(object sender, RoutedEventArgs e)
         {

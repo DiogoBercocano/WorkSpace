@@ -4,6 +4,7 @@
         Title="Sistema de Estoque"
         Height="680" Width="1100"
         WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="#F7F9FC">

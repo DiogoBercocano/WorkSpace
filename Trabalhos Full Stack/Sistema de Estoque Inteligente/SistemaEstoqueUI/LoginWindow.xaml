@@ -4,6 +4,7 @@
         Title="Login"
         MinWidth="900" MinHeight="600"
         WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         ResizeMode="CanResize"
         WindowStyle="None"
         Background="#F4F6FA"
@@ -11,119 +12,144 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="320" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <!-- Painel lateral azul escuro -->
         <Border Grid.Column="0" Background="#4666F5">
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <TextBlock FontFamily="Segoe MDL2 Assets"
-                   Text="&#xE77B;"
-                   FontSize="72"
-                   Foreground="White"
-                   Margin="0 0 0 32"
-                   HorizontalAlignment="Center"/>
+                           Text="&#xE77B;"
+                           FontSize="72"
+                           Foreground="White"
+                           Margin="0 0 0 32"
+                           HorizontalAlignment="Center"/>
                 <TextBlock Text="Bem-vindo!"
-                   Foreground="White"
-                   FontWeight="Bold"
-                   FontSize="24"
-                   HorizontalAlignment="Center"/>
+                           Foreground="White"
+                           FontWeight="Bold"
+                           FontSize="24"
+                           HorizontalAlignment="Center"/>
                 <TextBlock Text="Acesse sua conta"
-                   Foreground="#B7CAFF"
-                   FontSize="15"
-                   HorizontalAlignment="Center"/>
+                           Foreground="#B7CAFF"
+                           FontSize="15"
+                           HorizontalAlignment="Center"
+                           Margin="0 0 0 20"/>
+
+                <!-- Botão Sair personalizado -->
+                <Button Content="Sair"
+                        Width="140"
+                        Height="40"
+                        FontSize="16"
+                        FontWeight="SemiBold"
+                        HorizontalAlignment="Center"
+                        Cursor="Hand"
+                        Background="Transparent"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        Foreground="White"
+                        Margin="0 0 0 20"
+                        Click="BtnSair_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="BorderBrush" Value="White"/>
+                            <Setter Property="Foreground" Value="White"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="FontSize" Value="16"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Setter Property="Width" Value="140"/>
+                            <Setter Property="Height" Value="40"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="Margin" Value="0 0 0 20"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="White"/>
+                                    <Setter Property="Foreground" Value="#4666F5"/>
+                                    <Setter Property="BorderThickness" Value="0"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
         </Border>
 
         <!-- Cartão branco responsivo -->
         <Border Grid.Column="1" CornerRadius="20"
-            Background="White"
-            Padding="48 36"
-            Margin="0 28 36 28"
-            VerticalAlignment="Center"
-            HorizontalAlignment="Center"
-            MaxWidth="520" MinWidth="440">
+                Background="White"
+                Padding="48 36"
+                Margin="0 28 36 28"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                MaxWidth="520" MinWidth="440">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="20" Color="#4666F5" ShadowDepth="0" Opacity="0.12"/>
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Login"
-                   FontSize="30"
-                   FontWeight="Bold"
-                   Foreground="#1E2A38"
-                   HorizontalAlignment="Left"
-                   Margin="0 0 0 26"/>
+                           FontSize="30"
+                           FontWeight="Bold"
+                           Foreground="#1E2A38"
+                           HorizontalAlignment="Left"
+                           Margin="0 0 0 26"/>
                 <TextBlock Text="Faça seu login para continuar"
-                   FontSize="14"
-                   Foreground="#6B7C8C"
-                   Margin="0 0 0 32"/>
+                           FontSize="14"
+                           Foreground="#6B7C8C"
+                           Margin="0 0 0 32"/>
 
                 <TextBlock Text="Usuário"
-                   FontSize="14"
-                   FontWeight="SemiBold"
-                   Foreground="#506070"
-                   Margin="0 0 0 6"/>
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           Foreground="#506070"
+                           Margin="0 0 0 6"/>
                 <TextBox x:Name="txtUsuario"
-                 Height="42"
-                 FontSize="16"
-                 Padding="10"
-                 Background="#F8FAFC"
-                 BorderBrush="#C3D0F5"
-                 BorderThickness="1.5"
-                 Margin="0 0 0 18"
-                 Foreground="#20304B"/>
+                         Height="42"
+                         FontSize="16"
+                         Padding="10"
+                         Background="#F8FAFC"
+                         BorderBrush="#C3D0F5"
+                         BorderThickness="1.5"
+                         Margin="0 0 0 18"
+                         Foreground="#20304B"/>
 
                 <TextBlock Text="Senha"
-                   FontSize="14"
-                   FontWeight="SemiBold"
-                   Foreground="#506070"
-                   Margin="0 0 0 6"/>
+                           FontSize="14"
+                           FontWeight="SemiBold"
+                           Foreground="#506070"
+                           Margin="0 0 0 6"/>
                 <PasswordBox x:Name="txtSenha"
-                     Height="42"
-                     FontSize="16"
-                     Padding="10"
-                     Background="#F8FAFC"
-                     BorderBrush="#C3D0F5"
-                     BorderThickness="1.5"
-                     Margin="0 0 0 32"
-                     Foreground="#20304B"/>
+                             Height="42"
+                             FontSize="16"
+                             Padding="10"
+                             Background="#F8FAFC"
+                             BorderBrush="#C3D0F5"
+                             BorderThickness="1.5"
+                             Margin="0 0 0 32"
+                             Foreground="#20304B"/>
 
                 <Button Content="Entrar"
-                Height="48"
-                FontSize="17"
-                FontWeight="SemiBold"
-                Background="#4666F5"
-                Foreground="White"
-                BorderThickness="0"
-                Cursor="Hand"
-                Margin="0 0 0 14"
-                Click="BtnEntrar_Click"/>
+                        Height="48"
+                        FontSize="17"
+                        FontWeight="SemiBold"
+                        Background="#4666F5"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Margin="0 0 0 14"
+                        Click="BtnEntrar_Click"/>
 
                 <Button Content="Cadastrar"
-                Height="42"
-                FontSize="15"
-                Foreground="#4666F5"
-                Background="Transparent"
-                BorderBrush="#4666F5"
-                BorderThickness="1.4"
-                Cursor="Hand"
-                Click="BtnCadastrar_Click"/>
+                        Height="42"
+                        FontSize="15"
+                        Foreground="#4666F5"
+                        Background="Transparent"
+                        BorderBrush="#4666F5"
+                        BorderThickness="1.4"
+                        Cursor="Hand"
+                        Click="BtnCadastrar_Click"/>
             </StackPanel>
         </Border>
-
-        <!-- Botão fechar -->
-        <Button Content="×"
-            Width="32" Height="32"
-            FontSize="18"
-            FontWeight="Bold"
-            Foreground="#607080"
-            Background="Transparent"
-            BorderThickness="0"
-            Cursor="Hand"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Margin="0 10 10 0"
-            Click="BtnFechar_Click"/>
     </Grid>
 </Window>
