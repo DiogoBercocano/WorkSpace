@@ -1,0 +1,163 @@
+﻿<Window x:Class="BarbeariaApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Barbearia Premium"
+        Height="650" Width="950"
+        WindowStartupLocation="CenterScreen"
+        Background="#232931">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadowEffect"
+                          BlurRadius="15"
+                          ShadowDepth="3"
+                          Opacity="0.23"
+                          Color="#232931"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- MENU LATERAL -->
+        <StackPanel Grid.Column="0"
+                    Background="#232931"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Left">
+            <TextBlock Text="💈 DG Barbearia"
+                       Foreground="#FCC474"
+                       FontWeight="Bold"
+                       FontSize="20"
+                       Margin="20,30,0,40"/>
+            <Button Content="Agenda"
+                    Margin="20,0,20,10"
+                    Height="38"
+                    Background="#6881A1"
+                    Foreground="#FFF"
+                    BorderThickness="0"
+                    FontWeight="SemiBold"
+                    Cursor="Hand"/>
+            <Button Content="Clientes"
+                    Margin="20,0,20,10"
+                    Height="38"
+                    Background="#232931"
+                    Foreground="#FCC474"
+                    BorderThickness="0"
+                    FontWeight="SemiBold"
+                    Cursor="Hand"/>
+            <Button Content="Serviços"
+                    Margin="20,0,20,10"
+                    Height="38"
+                    Background="#232931"
+                    Foreground="#FCC474"
+                    BorderThickness="0"
+                    FontWeight="SemiBold"
+                    Cursor="Hand"/>
+        </StackPanel>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <Grid Grid.Column="1"
+              Background="#F8FAFF"
+              Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Card de Agendamento (formulário) -->
+            <Border Margin="30,40,30,0"
+                    Padding="20"
+                    CornerRadius="14"
+                    Background="White"
+                    Effect="{StaticResource DropShadowEffect}">
+                <StackPanel>
+                    <TextBlock Text="Novo Agendamento"
+                               FontSize="22"
+                               FontWeight="SemiBold"
+                               Foreground="#232931"
+                               Margin="0,0,0,16"/>
+                    <Grid Margin="0,0,0,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Nome do Cliente -->
+                        <StackPanel Margin="6" Grid.Column="0">
+                            <TextBlock Text="Cliente" FontWeight="SemiBold" Foreground="#7A7A7A" Margin="0,0,0,4"/>
+                            <TextBox x:Name="txtNomeCliente" Height="30" Padding="5" Background="#F8FAFF" BorderBrush="#FCC474"/>
+                        </StackPanel>
+                        <!-- Serviço -->
+                        <StackPanel Margin="6" Grid.Column="1">
+                            <TextBlock Text="Serviço" FontWeight="SemiBold" Foreground="#7A7A7A" Margin="0,0,0,4"/>
+                            <ComboBox x:Name="cbServico" Height="30" Padding="5" Background="#F8FAFF" BorderBrush="#FCC474">
+                                <ComboBoxItem Content="Corte"/>
+                                <ComboBoxItem Content="Barba"/>
+                                <ComboBoxItem Content="Completo"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <!-- Data e Hora -->
+                        <StackPanel Margin="6" Grid.Column="2">
+                            <TextBlock Text="Data e Hora" FontWeight="SemiBold" Foreground="#7A7A7A" Margin="0,0,0,4"/>
+                            <DatePicker x:Name="dpData" Height="30" Background="#F8FAFF" BorderBrush="#FCC474"/>
+                        </StackPanel>
+                    </Grid>
+                    <!-- Botões -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                        <Button x:Name="btnSalvar"
+                                Content="Salvar"
+                                Width="112" Height="34"
+                                Background="#6881A1"
+                                Foreground="#FFF"
+                                FontWeight="SemiBold"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Margin="0,0,10,0"
+                                Click="btnSalvar_Click"/>
+                        <Button x:Name="btnLimpar"
+                                Content="Limpar"
+                                Width="90" Height="34"
+                                Background="#FCC474"
+                                Foreground="#232931"
+                                FontWeight="SemiBold"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="btnLimpar_Click"/>
+                        <Button x:Name="btnExcluir"
+                                Content="Excluir"
+                                Width="90" Height="34"
+                                Background="#E74C3C"
+                                Foreground="#FFF"
+                                FontWeight="SemiBold"
+                                BorderThickness="0"
+                                Cursor="Hand"
+                                Click="btnExcluir_Click"
+                                IsEnabled="False"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- DataGrid Agendamentos -->
+            <Border Grid.Row="1"
+                    Margin="30,20,30,30"
+                    Background="White"
+                    CornerRadius="14"
+                    Padding="14"
+                    Effect="{StaticResource DropShadowEffect}">
+                <DataGrid x:Name="dgAgendamentos"
+                          AutoGenerateColumns="True"
+                          IsReadOnly="True"
+                          HeadersVisibility="Column"
+                          GridLinesVisibility="None"
+                          BorderThickness="0"
+                          FontSize="15"
+                          RowBackground="#F8FAFF"
+                          AlternatingRowBackground="#FCC474"
+                          Foreground="#232931"
+                          SelectionChanged="dgAgendamentos_SelectionChanged"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

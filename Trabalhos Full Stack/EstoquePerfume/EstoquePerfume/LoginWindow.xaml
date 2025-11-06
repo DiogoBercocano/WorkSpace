@@ -1,0 +1,105 @@
+﻿<Window x:Class="EstoquePerfumes.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Login - Estoque de Perfumes" Height="600" Width="800"
+        WindowStartupLocation="CenterScreen"
+        Background="#111111"
+        ResizeMode="NoResize"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadowEffect"
+                          BlurRadius="15"
+                          ShadowDepth="4"
+                          Opacity="0.3"
+                          Color="Black"/>
+        <SolidColorBrush x:Key="GoldBrush" Color="#FFD700"/>
+        <SolidColorBrush x:Key="DarkGrayBrush" Color="#232323"/>
+        <SolidColorBrush x:Key="LightGrayBrush" Color="#CCCCCC"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Lado esquerdo gráfico -->
+        <Border Grid.Column="0"
+                Background="#181818"
+                CornerRadius="0,20,20,0"
+                Margin="0">
+            <Image Source="/EstoquePerfume;component/Assets/logo.jpg"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Width="280"
+                   Opacity="0.90"/>
+        </Border>
+
+        <!-- Lado direito formulário -->
+        <Border Grid.Column="1"
+                Background="{StaticResource DarkGrayBrush}"
+                CornerRadius="20"
+                Margin="40"
+                Padding="40"
+                Effect="{StaticResource DropShadowEffect}">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="300">
+
+                <TextBlock Text="Acesso ao Sistema"
+                           FontSize="28"
+                           FontWeight="Bold"
+                           Foreground="{StaticResource GoldBrush}"
+                           Margin="0 0 0 20"
+                           HorizontalAlignment="Center"/>
+
+                <TextBlock Text="Email:" Margin="0,0,0,5" Foreground="{StaticResource LightGrayBrush}" FontWeight="SemiBold"/>
+                <TextBox x:Name="txtEmail" Margin="0,0,0,15" Padding="10"
+                         Background="#181818" BorderBrush="{StaticResource GoldBrush}" BorderThickness="1"
+                         Foreground="#F5F5F5" FontSize="14"/>
+
+                <TextBlock Text="Senha:" Margin="0,0,0,5" Foreground="{StaticResource LightGrayBrush}" FontWeight="SemiBold"/>
+                <PasswordBox x:Name="txtSenha" Margin="0,0,0,30" Padding="10"
+                             Background="#181818" BorderBrush="{StaticResource GoldBrush}" BorderThickness="1"
+                             Foreground="#F5F5F5" FontSize="14"/>
+
+                <Button Content="Entrar"
+                        Padding="12"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        Background="{StaticResource GoldBrush}"
+                        Foreground="#232323"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        HorizontalAlignment="Stretch"
+                        Click="Button_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="{StaticResource GoldBrush}"/>
+                            <Setter Property="Foreground" Value="#232323"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}" 
+                                                CornerRadius="10" >
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FDE9B2"/>
+                                    <Setter Property="Foreground" Value="#181818"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" Value="#C0A75A"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Window x:Class="EstoquePerfumes.ListarPerfumesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Lista de Perfumes" Height="600" Width="860"
+        WindowStartupLocation="CenterScreen"
+        Background="#111111"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="DropShadowEffect" BlurRadius="18" ShadowDepth="5" Opacity="0.38" Color="#000"/>
+        <SolidColorBrush x:Key="GoldBrush" Color="#FFD700"/>
+        <SolidColorBrush x:Key="DarkGrayBrush" Color="#232323"/>
+        <SolidColorBrush x:Key="LightGrayBrush" Color="#CCCCCC"/>
+        <!-- Estilo premium para o cabeçalho do DataGrid -->
+        <Style x:Key="DataGridColHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#FFD700"/>
+            <Setter Property="Background" Value="#181818"/>
+            <Setter Property="BorderBrush" Value="#FFD700"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Lista de Perfumes" FontSize="28" FontWeight="Bold"
+                   Foreground="{StaticResource GoldBrush}" Margin="0,24,0,10"
+                   HorizontalAlignment="Center" Grid.Row="0"/>
+
+        <Border Grid.Row="1" Margin="28,0,28,0" Background="{StaticResource DarkGrayBrush}" CornerRadius="24"
+                Effect="{StaticResource DropShadowEffect}">
+            <DataGrid x:Name="dgPerfumes" AutoGenerateColumns="False" IsReadOnly="True"
+                      Margin="16" FontSize="17" RowHeight="32" ColumnHeaderHeight="44"
+                      Background="#232323" Foreground="White"
+                      GridLinesVisibility="Horizontal"
+                      ColumnHeaderStyle="{StaticResource DataGridColHeaderStyle}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" Width="*" />
+                    <DataGridTextColumn Header="Gênero" Binding="{Binding Genero}" Width="120" />
+                    <DataGridTextColumn Header="Quantidade" Binding="{Binding Ml}" Width="130" />
+                    <DataGridTextColumn Header="Valor (R$)" Binding="{Binding Valor}" Width="120" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </Border>
+
+        <Button x:Name="btnVoltar" Content="Voltar" Width="130" Height="44"
+                Margin="0,24,0,24" HorizontalAlignment="Center" Grid.Row="2"
+                Background="#232323" Foreground="{StaticResource GoldBrush}"
+                BorderBrush="{StaticResource GoldBrush}" BorderThickness="2"
+                FontWeight="SemiBold" Cursor="Hand" FontSize="17"
+                Click="btnVoltar_Click"/>
+    </Grid>
+</Window>

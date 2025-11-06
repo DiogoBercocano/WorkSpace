@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\barbeariaapp\\barbeariaapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|solutionrelative:barbeariaapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\barbeariaapp\\barbeariaapp\\models\\agendamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|solutionrelative:barbeariaapp\\models\\agendamento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|c:\\users\\dgber\\documents\\github\\programacao-full-stack\\barbeariaapp\\barbeariaapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0BF5543-5477-4016-B832-DA20C3F6ACD9}|BarbeariaAPP\\BarbeariaAPP.csproj|solutionrelative:barbeariaapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BarbeariaAPP\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\MainWindow.xaml",
+              "RelativeToolTip": "BarbeariaAPP\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-10-28T23:15:22.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BarbeariaAPP\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BarbeariaAPP\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAIwIIAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T14:23:24.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Agendamento.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\Models\\Agendamento.cs",
+              "RelativeDocumentMoniker": "BarbeariaAPP\\Models\\Agendamento.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\programacao-Full-Stack\\BarbeariaApp\\BarbeariaAPP\\Models\\Agendamento.cs",
+              "RelativeToolTip": "BarbeariaAPP\\Models\\Agendamento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T13:47:54.526Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
