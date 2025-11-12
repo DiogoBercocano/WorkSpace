@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define o nó da lista
+// Nó da lista
 typedef struct No {
     int dado;
     struct No* proximo;
@@ -9,34 +9,30 @@ typedef struct No {
 
 No* ultimo = NULL;
 
-// Adiciona um elemento na lista circular
+// Adiciona elemento (Create)
 void adicionar(int dado) {
     No* novo = (No*) malloc(sizeof(No));
     novo->dado = dado;
     if (ultimo == NULL) {
-        // Quando a lista está vazia, o novo nó aponta para ele mesmo
+        novo->proximo = novo;
         ultimo = novo;
-        ultimo->proximo = ultimo;
     } else {
-        // Insere novo nó após o último e atualiza o ponteiro 'ultimo'
         novo->proximo = ultimo->proximo;
         ultimo->proximo = novo;
         ultimo = novo;
     }
 }
 
-// Remove um elemento da lista circular
+// Remove elemento pelo valor (Delete)
 int remover(int dado) {
-    if (ultimo == NULL) return 0; // Lista vazia
+    if (ultimo == NULL) return 0;
     No *atual = ultimo->proximo, *anterior = ultimo;
     do {
         if (atual->dado == dado) {
             if (atual == ultimo && atual == ultimo->proximo) {
-                // Caso único nó
                 free(atual);
                 ultimo = NULL;
             } else {
-                // Remove nó do meio ou do final
                 anterior->proximo = atual->proximo;
                 if (atual == ultimo) ultimo = anterior;
                 free(atual);
@@ -49,7 +45,7 @@ int remover(int dado) {
     return 0;
 }
 
-// Busca um nó pelo valor
+// Busca nó pelo valor (Read)
 No* buscar(int dado) {
     if (ultimo == NULL) return NULL;
     No* atual = ultimo->proximo;
@@ -60,19 +56,24 @@ No* buscar(int dado) {
     return NULL;
 }
 
-// Atualiza um valor existente na lista
-void atualizar(int dadoAntigo, int novoDado) {
+// Atualiza nó pelo valor (Update)
+int atualizar(int dadoAntigo, int novoDado) {
     No* no = buscar(dadoAntigo);
-    if (no != NULL) no->dado = novoDado;
+    if (no != NULL) {
+        no->dado = novoDado;
+        return 1;
+    }
+    return 0;
 }
 
-// Imprime todos os elementos da lista
+// Imprime toda a lista
 void imprimirLista() {
     if (ultimo == NULL) {
         printf("Lista vazia\n");
         return;
     }
     No* atual = ultimo->proximo;
+    printf("Lista Circular: ");
     do {
         printf("%d ", atual->dado);
         atual = atual->proximo;
@@ -81,15 +82,62 @@ void imprimirLista() {
 }
 
 int main() {
-    // Inserção de elementos
-    adicionar(1); adicionar(2); adicionar(3);
-    imprimirLista();
-    // Atualização de um elemento
-    atualizar(2, 4);
-    imprimirLista();
-    // Remoção de um elemento
-    remover(1);
-    imprimirLista();
+    int op, valor, novo, removido, encontrou;
+    do {
+        printf("\n--- MENU CRUD LISTA CIRCULAR ---\n");
+        printf("1. Inserir elemento\n");
+        printf("2. Listar elementos\n");
+        printf("3. Buscar elemento\n");
+        printf("4. Atualizar elemento\n");
+        printf("5. Remover elemento\n");
+        printf("0. Sair\nEscolha: ");
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                printf("Valor para inserir: ");
+                scanf("%d", &valor);
+                adicionar(valor);
+                printf("Inserido!\n");
+                break;
+            case 2:
+                imprimirLista();
+                break;
+            case 3:
+                printf("Valor para buscar: ");
+                scanf("%d", &valor);
+                encontrou = (buscar(valor) != NULL);
+                if (encontrou)
+                    printf("Valor %d está na lista.\n", valor);
+                else
+                    printf("Valor %d NÃO está na lista.\n", valor);
+                break;
+            case 4:
+                printf("Valor antigo: ");
+                scanf("%d", &valor);
+                printf("Novo valor: ");
+                scanf("%d", &novo);
+                if (atualizar(valor, novo))
+                    printf("Valor atualizado!\n");
+                else
+                    printf("Valor antigo NÃO encontrado.\n");
+                break;
+            case 5:
+                printf("Valor para remover: ");
+                scanf("%d", &valor);
+                removido = remover(valor);
+                if (removido)
+                    printf("Removido!\n");
+                else
+                    printf("Valor NÃO encontrado.\n");
+                break;
+            case 0:
+                printf("Finalizando...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (op != 0);
     return 0;
 }
 

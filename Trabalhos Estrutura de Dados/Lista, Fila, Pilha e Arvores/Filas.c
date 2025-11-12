@@ -19,22 +19,20 @@ Fila* criarFila() {
     return f;
 }
 
-// Insere elemento no final da fila
+// Insere elemento no final da fila (Create)
 void enfileirar(Fila* f, int dado) {
     No* novo = (No*) malloc(sizeof(No));
     novo->dado = dado;
     novo->proximo = NULL;
     if (f->fim == NULL) {
-        // Primeira inserção, fila estava vazia
         f->inicio = f->fim = novo;
         return;
     }
-    // Atualiza ponteiros para inserir no fim
     f->fim->proximo = novo;
     f->fim = novo;
 }
 
-// Remove elemento do início da fila
+// Remove elemento do início da fila (Delete)
 int desenfileirar(Fila* f) {
     if (f->inicio == NULL) return -1; // Fila vazia
     No* temp = f->inicio;
@@ -45,9 +43,10 @@ int desenfileirar(Fila* f) {
     return dado;
 }
 
-// Imprime os elementos da fila
+// Imprime os elementos da fila (Read)
 void imprimirFila(Fila* f) {
     No* atual = f->inicio;
+    printf("Fila: ");
     while (atual != NULL) {
         printf("%d ", atual->dado);
         atual = atual->proximo;
@@ -55,14 +54,83 @@ void imprimirFila(Fila* f) {
     printf("\n");
 }
 
+// Busca valor na fila
+No* buscarFila(Fila* f, int valor) {
+    No* atual = f->inicio;
+    while (atual != NULL) {
+        if (atual->dado == valor)
+            return atual;
+        atual = atual->proximo;
+    }
+    return NULL;
+}
+
+// Atualiza valor na fila (Update)
+int atualizarFila(Fila* f, int valorAntigo, int valorNovo) {
+    No* no = buscarFila(f, valorAntigo);
+    if (no != NULL) {
+        no->dado = valorNovo;
+        return 1;
+    }
+    return 0;
+}
+
+// Função principal com menu CRUD
 int main() {
     Fila* f = criarFila();
-    // Insere elementos na fila
-    enfileirar(f, 10); enfileirar(f, 20); enfileirar(f, 30);
-    imprimirFila(f);
-    // Remove elemento do início
-    desenfileirar(f);
-    imprimirFila(f);
+    int op, valor, antigo, novo, removido;
+    do {
+        printf("\n--- MENU CRUD FILA ---\n");
+        printf("1. Inserir (Enfileirar)\n");
+        printf("2. Listar fila\n");
+        printf("3. Buscar valor\n");
+        printf("4. Atualizar valor\n");
+        printf("5. Remover (Desenfileirar)\n");
+        printf("0. Sair\nEscolha: ");
+        scanf("%d", &op);
+
+        switch (op) {
+            case 1:
+                printf("Valor para inserir: ");
+                scanf("%d", &valor);
+                enfileirar(f, valor);
+                printf("Inserido!\n");
+                break;
+            case 2:
+                imprimirFila(f);
+                break;
+            case 3:
+                printf("Valor para buscar: ");
+                scanf("%d", &valor);
+                if (buscarFila(f, valor))
+                    printf("Valor %d encontrado na fila!\n", valor);
+                else
+                    printf("Valor %d NÃO encontrado.\n", valor);
+                break;
+            case 4:
+                printf("Valor antigo: ");
+                scanf("%d", &antigo);
+                printf("Novo valor: ");
+                scanf("%d", &novo);
+                if (atualizarFila(f, antigo, novo))
+                    printf("Valor atualizado!\n");
+                else
+                    printf("Valor antigo NÃO encontrado.\n");
+                break;
+            case 5:
+                removido = desenfileirar(f);
+                if (removido != -1)
+                    printf("Removido do início: %d\n", removido);
+                else
+                    printf("Fila vazia!\n");
+                break;
+            case 0:
+                printf("Finalizando...\n");
+                break;
+            default:
+                printf("Opção inválida!\n");
+        }
+    } while (op != 0);
     return 0;
 }
 
