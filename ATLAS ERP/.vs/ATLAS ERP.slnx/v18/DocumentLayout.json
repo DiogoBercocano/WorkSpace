@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|c:\\users\\dgber\\documents\\github\\workspace\\atlas erp\\atlas erp\\migrations\\202602200013217_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|solutionrelative:atlas erp\\migrations\\202602200013217_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|c:\\users\\dgber\\documents\\github\\workspace\\atlas erp\\atlas erp\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|solutionrelative:atlas erp\\migrations\\configuration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|c:\\users\\dgber\\documents\\github\\workspace\\atlas erp\\atlas erp\\data\\atlascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|solutionrelative:atlas erp\\data\\atlascontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|c:\\users\\dgber\\documents\\github\\workspace\\atlas erp\\atlas erp\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B725B726-8ADA-418D-8E9B-AB729C952295}|ATLAS ERP\\ATLAS ERP.csproj|solutionrelative:atlas erp\\models\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "202602200013217_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Migrations\\202602200013217_InitialCreate.cs",
-              "RelativeDocumentMoniker": "ATLAS ERP\\Migrations\\202602200013217_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Migrations\\202602200013217_InitialCreate.cs",
-              "RelativeToolTip": "ATLAS ERP\\Migrations\\202602200013217_InitialCreate.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Models\\Empresa.cs",
+              "RelativeDocumentMoniker": "ATLAS ERP\\Models\\Empresa.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Models\\Empresa.cs",
+              "RelativeToolTip": "ATLAS ERP\\Models\\Empresa.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T00:13:33.616Z",
+              "WhenOpened": "2026-03-12T00:03:30.606Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AtlasContext.cs",
-              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Data\\AtlasContext.cs",
-              "RelativeDocumentMoniker": "ATLAS ERP\\Data\\AtlasContext.cs",
-              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Data\\AtlasContext.cs",
-              "RelativeToolTip": "ATLAS ERP\\Data\\AtlasContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Configuration.cs",
+              "DocumentMoniker": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Migrations\\Configuration.cs",
+              "RelativeDocumentMoniker": "ATLAS ERP\\Migrations\\Configuration.cs",
+              "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\ATLAS ERP\\ATLAS ERP\\Migrations\\Configuration.cs",
+              "RelativeToolTip": "ATLAS ERP\\Migrations\\Configuration.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wBgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-20T00:11:25.189Z",
+              "WhenOpened": "2026-03-12T00:02:42.931Z",
               "EditorCaption": ""
             }
           ]
