@@ -1,0 +1,99 @@
+﻿@model CoffeeWeb.Models.Produto
+
+@{
+    ViewBag.Title = "Excluir Produto";
+}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+        <h2 class="text-danger">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> Excluir Produto
+        </h2>
+
+        <a href="@Url.Action("Index")" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Voltar para a Lista
+        </a>
+    </div>
+
+    <div class="alert alert-danger shadow-sm border-0">
+
+        <h4 class="alert-heading">
+            Tem certeza que deseja excluir este café?
+        </h4>
+
+        <p>
+            Esta ação não poderá ser desfeita e o registro será apagado permanentemente do
+            banco de dados.
+        </p>
+
+        <hr>
+
+        <div class="row align-items-center mt-4">
+
+            <div class="col-md-3 text-center mb-3">
+                @if (!string.IsNullOrEmpty(Model.ImagemUrl))
+                {
+                    <img src="@Url.Content(Model.ImagemUrl)"
+                         class="img-fluid rounded shadowsm border"
+                         style="max-height: 200px; object-fit: cover;"
+                         alt="@Model.Nome" />
+                }
+            </div>
+
+            <div class="col-md-9">
+
+                <table class="table table-borderless table-sm">
+
+                    <tr>
+                        <th width="150" class="text-end">ID do Produto:</th>
+                        <td>
+                            <span class="badge bg-dark">@Model.Id</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-end">Nome:</th>
+                        <td class="fw-bold fs-5">@Model.Nome</td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-end">Preço:</th>
+                        <td class="text-success fw-bold">
+                            R$ @Model.Preco.ToString("N2")
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-end">Descrição:</th>
+                        <td class="text-muted">@Model.Descricao</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="mt-4 text-end">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <a href="@Url.Action("Index")" class="btn btn-secondary px-4 me2">
+                Cancelar
+            </a>
+
+            <button type="submit" class="btn btn-danger px-5 fw-bold">
+                <i class="bi bi-trash"></i> Sim, Excluir Definitivamente
+            </button>
+        }
+
+    </div>
+
+</div>
+
+</div>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-4">
+        <h2>Painel de Controle</h2>
+        <a href="@Url.Action("Logout", "Admin")" class="btn btn-outline-danger">Sair (Logout)</a>
+    </div>
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Bem-vindo(a), @Session["UsuarioLogado"]!</h4>
+        <p>Você acessou uma área restrita do sistema com sucesso.</p>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-box-seam fs-1 text-primary"></i>
+                    <h5 class="card-title mt-3">Gerenciar Produtos</h5>
+                    <p class="card-text text-muted">Adicione, edite ou remova cafés do cardápio.</p>
+                    <a href="@Url.Action("Index", "Produto")" class="btn btn-primary w-100">
+                        Acessar Módulo <i class="bi bi-arrow-right-circle ms-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

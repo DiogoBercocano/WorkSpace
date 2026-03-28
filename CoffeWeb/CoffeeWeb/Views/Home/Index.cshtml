@@ -1,0 +1,598 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section Styles {
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --coffee-dark: #1C1208;
+            --coffee-mid: #3D2B1A;
+            --coffee-warm: #7A4F2D;
+            --coffee-gold: #C9923A;
+            --coffee-cream: #F5ECD7;
+            --coffee-light: #FAF6EE;
+            --coffee-muted: #9A8070;
+        }
+
+        body {
+            background: var(--coffee-light);
+            font-family: 'DM Sans', sans-serif;
+            color: var(--coffee-dark);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ── HEADER ── */
+        .cw-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 3rem;
+            border-bottom: 1px solid rgba(122,79,45,0.15);
+            background: var(--coffee-light);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .cw-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--coffee-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .cw-logo-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--coffee-gold);
+            display: inline-block;
+        }
+
+        .cw-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+            .cw-nav a {
+                font-size: 0.875rem;
+                font-weight: 400;
+                color: var(--coffee-muted);
+                text-decoration: none;
+                letter-spacing: 0.03em;
+                transition: color 0.2s;
+            }
+
+                .cw-nav a:hover {
+                    color: var(--coffee-dark);
+                }
+
+        /* ── HERO ── */
+        .cw-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 80vh;
+        }
+
+        .cw-hero-left {
+            padding: 5rem 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--coffee-light);
+        }
+
+        .cw-eyebrow {
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--coffee-gold);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .cw-eyebrow::before {
+                content: '';
+                display: block;
+                width: 24px;
+                height: 1px;
+                background: var(--coffee-gold);
+            }
+
+        .cw-hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--coffee-dark);
+            margin-bottom: 1.5rem;
+        }
+
+            .cw-hero-title em {
+                font-style: italic;
+                color: var(--coffee-warm);
+            }
+
+        .cw-hero-desc {
+            font-size: 1rem;
+            font-weight: 300;
+            color: var(--coffee-muted);
+            line-height: 1.7;
+            max-width: 400px;
+            margin-bottom: 2.5rem;
+        }
+
+        .cw-btn-group {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .cw-btn-primary {
+            background: var(--coffee-dark);
+            color: var(--coffee-cream);
+            border: none;
+            padding: 0.875rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.15s;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+            .cw-btn-primary:hover {
+                background: var(--coffee-mid);
+                transform: translateY(-1px);
+                color: var(--coffee-cream);
+                text-decoration: none;
+            }
+
+        .cw-btn-secondary {
+            background: transparent;
+            color: var(--coffee-dark);
+            border: 1px solid rgba(28,18,8,0.25);
+            padding: 0.875rem 2rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+            transition: border-color 0.2s, transform 0.15s;
+            border-radius: 2px;
+            display: inline-block;
+        }
+
+            .cw-btn-secondary:hover {
+                border-color: var(--coffee-dark);
+                transform: translateY(-1px);
+                color: var(--coffee-dark);
+                text-decoration: none;
+            }
+
+        /* ── HERO DIREITO ── */
+        .cw-hero-right {
+            background: var(--coffee-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 3rem;
+        }
+
+        .cw-cup-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .cw-hero-tag {
+            background: rgba(201,146,58,0.15);
+            border: 1px solid rgba(201,146,58,0.3);
+            color: var(--coffee-gold);
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 2px;
+        }
+
+        .cw-cup-visual {
+            width: 160px;
+            height: 160px;
+        }
+
+        .cw-cup-svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .cw-hero-stat {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .cw-stat-item {
+            text-align: center;
+        }
+
+        .cw-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--coffee-cream);
+            line-height: 1;
+        }
+
+        .cw-stat-label {
+            font-size: 0.7rem;
+            font-weight: 400;
+            color: var(--coffee-muted);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .cw-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            align-self: center;
+        }
+
+        /* ── CARDS ── */
+        .cw-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid rgba(122,79,45,0.12);
+        }
+
+        .cw-card {
+            padding: 2.5rem 3rem;
+            border-right: 1px solid rgba(122,79,45,0.12);
+            transition: background 0.2s;
+        }
+
+            .cw-card:last-child {
+                border-right: none;
+            }
+
+            .cw-card:hover {
+                background: var(--coffee-cream);
+            }
+
+        .cw-card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(201,146,58,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+            .cw-card-icon svg {
+                width: 18px;
+                height: 18px;
+            }
+
+        .cw-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--coffee-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .cw-card-desc {
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: var(--coffee-muted);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .cw-card-link {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--coffee-gold);
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .cw-card:hover .cw-card-link {
+            gap: 10px;
+        }
+
+        /* ── FOOTER ── */
+        .cw-footer {
+            padding: 1.5rem 3rem;
+            border-top: 1px solid rgba(122,79,45,0.12);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cw-footer-text {
+            font-size: 0.8rem;
+            color: var(--coffee-muted);
+            font-weight: 300;
+        }
+
+        .cw-badge {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #2D7A4F;
+            background: rgba(45,122,79,0.1);
+            border: 1px solid rgba(45,122,79,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 2px;
+        }
+
+        /* ── ANIMAÇÕES ── */
+        @@keyframes steamRise {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scaleX(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: translateY(-12px) scaleX(1.2);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-24px) scaleX(0.8);
+            }
+        }
+
+        .steam-line {
+            animation: steamRise 2.5s ease-in-out infinite;
+        }
+
+            .steam-line:nth-child(2) {
+                animation-delay: 0.4s;
+            }
+
+            .steam-line:nth-child(3) {
+                animation-delay: 0.8s;
+            }
+
+        @@keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cw-hero-left > * {
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .cw-eyebrow {
+            animation-delay: 0.1s;
+        }
+
+        .cw-hero-title {
+            animation-delay: 0.2s;
+        }
+
+        .cw-hero-desc {
+            animation-delay: 0.3s;
+        }
+
+        .cw-btn-group {
+            animation-delay: 0.4s;
+        }
+
+        /* ── RESPONSIVO ── */
+        @@media (max-width: 768px) {
+            .cw-header {
+                padding: 1rem 1.5rem;
+            }
+
+            .cw-nav {
+                display: none;
+            }
+
+            .cw-hero {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .cw-hero-left {
+                padding: 3rem 1.5rem;
+            }
+
+            .cw-hero-right {
+                padding: 3rem 1.5rem;
+                min-height: 340px;
+            }
+
+            .cw-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cw-card {
+                border-right: none;
+                border-bottom: 1px solid rgba(122,79,45,0.12);
+                padding: 2rem 1.5rem;
+            }
+
+                .cw-card:last-child {
+                    border-bottom: none;
+                }
+
+            .cw-footer {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+}
+
+<header class="cw-header">
+    <a href="@Url.Action("Index", "Home")" class="cw-logo">
+        <span class="cw-logo-dot"></span>
+        Coffee Web
+    </a>
+    <nav class="cw-nav">
+        <a href="@Url.Action("Index", "Cardapio")">Cardápio</a>
+        <a href="@Url.Action("Index", "Produto")">Produtos</a>
+        <a href="#">Sistema</a>
+    </nav>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="cw-hero">
+        <div class="cw-hero-left">
+            <div class="cw-eyebrow">Sistema de gerenciamento</div>
+            <h1 class="cw-hero-title">
+                O café perfeito,<br>
+                <em>gerenciado</em><br>
+                com precisão.
+            </h1>
+            <p class="cw-hero-desc">
+                Plataforma moderna para visualizar e administrar seu cardápio de cafés com praticidade e elegância.
+            </p>
+            <div class="cw-btn-group">
+                <a href="@Url.Action("Index", "Cardapio")" class="cw-btn-primary">Ver Cardápio</a>
+                <a href="@Url.Action("Login", "Admin")" class="cw-btn-secondary">Área Administrativa</a>
+            </div>
+        </div>
+
+        <div class="cw-hero-right">
+            <div class="cw-cup-wrapper">
+                <div class="cw-hero-tag">ASP.NET MVC · Em operação</div>
+
+                <div class="cw-cup-visual">
+                    <svg class="cw-cup-svg" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Vapor -->
+                        <path class="steam-line" d="M62 38 Q58 28 62 18" stroke="#C9923A" stroke-width="2" stroke-linecap="round" opacity="0" />
+                        <path class="steam-line" d="M80 35 Q76 22 80 10" stroke="#C9923A" stroke-width="2" stroke-linecap="round" opacity="0" />
+                        <path class="steam-line" d="M98 38 Q102 28 98 18" stroke="#C9923A" stroke-width="2" stroke-linecap="round" opacity="0" />
+                        <!-- Sombra da xícara -->
+                        <ellipse cx="80" cy="52" rx="36" ry="8" fill="#7A4F2D" opacity="0.5" />
+                        <!-- Corpo da xícara -->
+                        <path d="M44 52 L52 128 Q52 136 80 136 Q108 136 108 128 L116 52 Z" fill="#3D2B1A" />
+                        <path d="M44 52 L52 128 Q52 136 80 136 Q108 136 108 128 L116 52 Z" fill="url(#coffeeGrad)" />
+                        <!-- Borda superior -->
+                        <ellipse cx="80" cy="52" rx="36" ry="8" fill="#5A3520" />
+                        <!-- Superfície do café -->
+                        <ellipse cx="80" cy="52" rx="28" ry="5" fill="#7A4F2D" opacity="0.6" />
+                        <!-- Alça -->
+                        <path d="M116 68 Q132 68 132 84 Q132 100 116 100" stroke="#5A3520" stroke-width="4" fill="none" stroke-linecap="round" />
+                        <!-- Sombra base -->
+                        <ellipse cx="80" cy="132" rx="32" ry="6" fill="#2A1A0A" opacity="0.3" />
+                        <defs>
+                            <linearGradient id="coffeeGrad" x1="44" y1="52" x2="116" y2="136" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#5A3520" />
+                                <stop offset="100%" stop-color="#1C1208" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+
+                <div class="cw-hero-stat">
+                    <div class="cw-stat-item">
+                        <div class="cw-stat-num">24</div>
+                        <div class="cw-stat-label">Cafés</div>
+                    </div>
+                    <div class="cw-divider"></div>
+                    <div class="cw-stat-item">
+                        <div class="cw-stat-num">3</div>
+                        <div class="cw-stat-label">Categorias</div>
+                    </div>
+                    <div class="cw-divider"></div>
+                    <div class="cw-stat-item">
+                        <div class="cw-stat-num">∞</div>
+                        <div class="cw-stat-label">Sabor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="cw-cards">
+        <div class="cw-card">
+            <div class="cw-card-icon">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="3" width="14" height="2" rx="1" fill="#C9923A" />
+                    <rect x="2" y="7" width="10" height="2" rx="1" fill="#C9923A" opacity="0.6" />
+                    <rect x="2" y="11" width="12" height="2" rx="1" fill="#C9923A" opacity="0.4" />
+                    <rect x="2" y="15" width="7" height="2" rx="1" fill="#C9923A" opacity="0.3" />
+                </svg>
+            </div>
+            <div class="cw-card-title">Cardápio</div>
+            <p class="cw-card-desc">Visualize todos os cafés disponíveis com descrição detalhada e preços atualizados.</p>
+            <a href="@Url.Action("Index", "Cardapio")" class="cw-card-link">Acessar cardápio →</a>
+        </div>
+
+        <div class="cw-card">
+            <div class="cw-card-icon">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="3" stroke="#C9923A" stroke-width="1.5" />
+                    <path d="M9 2 L9 4 M9 14 L9 16 M2 9 L4 9 M14 9 L16 9" stroke="#C9923A" stroke-width="1.5" stroke-linecap="round" />
+                    <path d="M4.2 4.2 L5.6 5.6 M12.4 12.4 L13.8 13.8" stroke="#C9923A" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+                </svg>
+            </div>
+            <div class="cw-card-title">Produtos</div>
+            <p class="cw-card-desc">Gerencie o catálogo completo, edite informações e mantenha o sistema sempre atualizado.</p>
+            <a href="@Url.Action("Index", "Produto")" class="cw-card-link">Gerenciar produtos →</a>
+        </div>
+
+        <div class="cw-card">
+            <div class="cw-card-icon">
+                <svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="10" width="3" height="6" rx="1" fill="#C9923A" opacity="0.4" />
+                    <rect x="7" y="7" width="3" height="9" rx="1" fill="#C9923A" opacity="0.6" />
+                    <rect x="12" y="3" width="3" height="13" rx="1" fill="#C9923A" />
+                </svg>
+            </div>
+            <div class="cw-card-title">Sistema</div>
+            <p class="cw-card-desc">Projeto desenvolvido com ASP.NET MVC seguindo arquitetura limpa e boas práticas.</p>
+            <a href="#" class="cw-card-link">Ver detalhes →</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="cw-footer">
+    <span class="cw-footer-text">Coffee Web · Sistema acadêmico/profissional em ASP.NET MVC</span>
+    <span class="cw-badge">Online</span>
+</footer>
