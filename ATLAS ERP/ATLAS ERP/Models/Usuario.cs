@@ -19,6 +19,7 @@ namespace ATLAS_ERP.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        [Required]
         public string SenhaHash { get; set; }
         public string Role { get; set; }
         public bool Ativo { get; set; }

@@ -90,3 +90,4 @@ C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS ER
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS ERP.pdb
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.InitialCreate.resources
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS ERP.csproj.GenerateResource.cache
+C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.UpdateModel.resources
