@@ -130,8 +130,10 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\EmpresaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\SuperAdminController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Data\AtlasContext.cs" />
     <Compile Include="Filters\RolerFilters.cs" />
@@ -145,6 +147,22 @@
     <Compile Include="Migrations\202603280302335_UpdateModel.cs" />
     <Compile Include="Migrations\202603280302335_UpdateModel.Designer.cs">
       <DependentUpon>202603280302335_UpdateModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202604010257315_AddStatusEmpresa.cs" />
+    <Compile Include="Migrations\202604010257315_AddStatusEmpresa.Designer.cs">
+      <DependentUpon>202604010257315_AddStatusEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202604010311101_AddStatusEmpresa_EmpresaIdNullable.cs" />
+    <Compile Include="Migrations\202604010311101_AddStatusEmpresa_EmpresaIdNullable.Designer.cs">
+      <DependentUpon>202604010311101_AddStatusEmpresa_EmpresaIdNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202604010315434_EmpresaIdNullabl.cs" />
+    <Compile Include="Migrations\202604010315434_EmpresaIdNullabl.Designer.cs">
+      <DependentUpon>202604010315434_EmpresaIdNullabl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202604010401058_AddLogoPathEmpresa.cs" />
+    <Compile Include="Migrations\202604010401058_AddLogoPathEmpresa.Designer.cs">
+      <DependentUpon>202604010401058_AddLogoPathEmpresa.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -175,8 +193,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\images\AtlasLogo.png" />
-    <Content Include="Content\images\Logo_atlas.png" />
+    <Content Include="Content\images\logos\AtlasLogo.png" />
+    <Content Include="Content\images\logos\Logo_atlas.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -216,6 +234,8 @@
     <Content Include="Views\Usuario\Create.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\Produto\Index.cshtml" />
+    <Content Include="Views\Empresa\Cadastro.cshtml" />
+    <Content Include="Views\SuperAdmin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -254,6 +274,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202603280302335_UpdateModel.resx">
       <DependentUpon>202603280302335_UpdateModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604010257315_AddStatusEmpresa.resx">
+      <DependentUpon>202604010257315_AddStatusEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604010311101_AddStatusEmpresa_EmpresaIdNullable.resx">
+      <DependentUpon>202604010311101_AddStatusEmpresa_EmpresaIdNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604010315434_EmpresaIdNullabl.resx">
+      <DependentUpon>202604010315434_EmpresaIdNullabl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604010401058_AddLogoPathEmpresa.resx">
+      <DependentUpon>202604010401058_AddLogoPathEmpresa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

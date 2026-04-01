@@ -17,6 +17,7 @@
             --panel: #0b1525;
             --card: #0f1e35;
             --card-hover: #132540;
+            --expand-bg: #0d1a2e;
             --border: rgba(100,160,255,0.10);
             --border-md: rgba(100,160,255,0.18);
             --accent: #3b82f6;
@@ -53,7 +54,6 @@
             min-height: 100vh;
         }
 
-        /* FUNDO */
         .bg-layer {
             position: fixed;
             inset: 0;
@@ -221,7 +221,7 @@
         .main {
             margin-left: var(--sidebar-w);
             flex: 1;
-            padding: 32px 36px;
+            padding: 32px 40px;
             position: relative;
             z-index: 1;
         }
@@ -254,10 +254,12 @@
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 10px;
             transition: background 0.18s, transform 0.15s;
             box-shadow: 0 4px 16px rgba(59,130,246,0.25);
+            border: none;
+            cursor: pointer;
         }
 
             .btn-primary:hover {
@@ -313,38 +315,175 @@
             text-transform: uppercase;
             letter-spacing: 0.07em;
             font-weight: 500;
-            padding: 10px 24px;
+            padding: 10px 20px;
             text-align: left;
             background: rgba(0,0,0,0.15);
         }
 
-        tbody tr {
+        .tr-main {
             border-top: 1px solid var(--border);
+            cursor: pointer;
             transition: background 0.15s;
         }
 
-            tbody tr:hover {
+            .tr-main:hover {
                 background: var(--card-hover);
             }
 
-        tbody td {
-            padding: 13px 24px;
-            font-size: 14px;
+            .tr-main.expanded {
+                background: var(--card-hover);
+            }
+
+            .tr-main td {
+                padding: 14px 20px;
+                font-size: 14px;
+            }
+
+        .expand-chevron {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: var(--accent-soft);
+            color: var(--accent-light);
+            transition: transform 0.22s, background 0.15s;
+            flex-shrink: 0;
         }
 
-        .td-muted {
-            color: var(--muted);
+            .expand-chevron svg {
+                width: 13px;
+                height: 13px;
+            }
+
+        .tr-main.expanded .expand-chevron {
+            transform: rotate(180deg);
+            background: rgba(59,130,246,0.2);
+        }
+
+        .tr-expand {
+            display: none;
+            background: var(--expand-bg);
+            border-top: 1px solid var(--border);
+        }
+
+            .tr-expand.open {
+                display: table-row;
+            }
+
+        .expand-panel {
+            padding: 20px 24px 20px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .expand-details {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .expand-field {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .expand-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--faint);
+            font-weight: 500;
+        }
+
+        .expand-value {
             font-size: 13px;
+            color: var(--text);
         }
 
-        /* badges de role */
+        /* botao olhinho de senha */
+        .btn-reveal {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--muted);
+            padding: 0;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.15s;
+        }
+
+            .btn-reveal:hover {
+                color: var(--accent-light);
+            }
+
+            .btn-reveal svg {
+                width: 14px;
+                height: 14px;
+            }
+
+        .expand-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .btn-act {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 8px 14px;
+            border-radius: 8px;
+            border: 1px solid;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: background 0.15s, transform 0.12s;
+            background: none;
+        }
+
+            .btn-act:hover {
+                transform: translateY(-1px);
+            }
+
+            .btn-act svg {
+                width: 13px;
+                height: 13px;
+            }
+
+        .btn-act-edit {
+            border-color: rgba(201,168,76,0.25);
+            color: var(--gold);
+            background: var(--gold-soft);
+        }
+
+            .btn-act-edit:hover {
+                background: rgba(201,168,76,0.2);
+            }
+
+        .btn-act-delete {
+            border-color: rgba(248,113,113,0.25);
+            color: var(--red);
+            background: var(--red-soft);
+        }
+
+            .btn-act-delete:hover {
+                background: rgba(248,113,113,0.2);
+            }
+
         .role-badge {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-size: 12px;
+            font-size: 11px;
             padding: 3px 10px;
             border-radius: 20px;
+            font-weight: 500;
         }
 
             .role-badge.admin {
@@ -357,17 +496,21 @@
                 color: var(--gold);
             }
 
+            .role-badge.vendedor {
+                background: var(--green-soft);
+                color: var(--green);
+            }
+
             .role-badge.outros {
                 background: rgba(100,160,255,0.06);
                 color: var(--muted);
             }
 
-        /* badge ativo/inativo */
         .status-badge {
             display: inline-flex;
             align-items: center;
             gap: 5px;
-            font-size: 12px;
+            font-size: 11px;
             padding: 3px 10px;
             border-radius: 20px;
         }
@@ -389,10 +532,9 @@
             background: currentColor;
         }
 
-        /* avatar inicial */
         .row-avatar {
-            width: 30px;
-            height: 30px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             background: var(--accent-soft);
             border: 1px solid var(--border-md);
@@ -400,11 +542,17 @@
             align-items: center;
             justify-content: center;
             font-family: 'Syne', sans-serif;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
             color: var(--accent-light);
             margin-right: 8px;
             vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        .td-muted {
+            color: var(--muted);
+            font-size: 13px;
         }
 
         .empty-state {
@@ -414,10 +562,215 @@
             font-size: 13px;
         }
 
+        /* MODAIS */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+            .modal-overlay.open {
+                display: flex;
+            }
+
+        .modal {
+            background: var(--card);
+            border: 1px solid var(--border-md);
+            border-radius: 18px;
+            padding: 32px 36px;
+            width: 100%;
+            max-width: 460px;
+            position: relative;
+            animation: fadeUp 0.25s ease both;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--muted);
+            transition: background 0.15s, color 0.15s;
+        }
+
+            .modal-close:hover {
+                background: var(--red-soft);
+                color: var(--red);
+            }
+
+            .modal-close svg {
+                width: 14px;
+                height: 14px;
+            }
+
+        .modal-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .modal-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .modal-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 22px;
+        }
+
+        .modal-form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal-form-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-input {
+            width: 100%;
+            height: 42px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 0 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+        }
+
+            .modal-input::placeholder {
+                color: var(--faint);
+            }
+
+            .modal-input:hover {
+                border-color: var(--border-md);
+            }
+
+            .modal-input:focus {
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px rgba(59,130,246,0.18);
+            }
+
+        select.modal-input {
+            cursor: pointer;
+        }
+
+        .modal-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .modal-btn-submit {
+            flex: 1;
+            height: 44px;
+            background: var(--accent);
+            border: none;
+            border-radius: 9px;
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+            .modal-btn-submit:hover {
+                background: #2563eb;
+                transform: translateY(-1px);
+            }
+
+        .modal-btn-cancel {
+            height: 44px;
+            padding: 0 20px;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--muted);
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+
+            .modal-btn-cancel:hover {
+                background: var(--card-hover);
+                color: var(--text);
+            }
+
+        .modal-danger-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--red-soft);
+            border: 2px solid rgba(248,113,113,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--red);
+        }
+
+            .modal-danger-icon svg {
+                width: 20px;
+                height: 20px;
+            }
+
+        .modal-btn-delete {
+            flex: 1;
+            height: 44px;
+            background: var(--red);
+            border: none;
+            border-radius: 9px;
+            font-family: 'Syne', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+            .modal-btn-delete:hover {
+                background: #ef4444;
+                transform: translateY(-1px);
+            }
+
         @@keyframes fadeUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(16px);
             }
 
             to {
@@ -435,6 +788,15 @@
                 margin-left: 0;
                 padding: 20px;
             }
+
+            .expand-panel {
+                flex-direction: column;
+                padding: 16px;
+            }
+
+            .expand-details {
+                gap: 16px;
+            }
         }
     </style>
 </head>
@@ -448,7 +810,9 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <img src="~/Content/images/Logo_atlas.png" alt="Atlas ERP" />
+            <a href="/Admin/Dashboard ">
+                <img src="~/Content/images/Logo_atlas.png" alt="Atlas ERP" />
+            </a>
         </div>
 
         <span class="menu-label">Principal</span>
@@ -546,6 +910,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <th style="width:36px;"></th>
                             <th>Nome</th>
                             <th>E-mail</th>
                             <th>Cargo</th>
@@ -557,22 +922,107 @@
                         {
                             var roleClass = u.Role?.ToLower() == "admin" ? "admin"
                                           : u.Role?.ToLower() == "gerente" ? "gerente"
+                                          : u.Role?.ToLower() == "vendedor" ? "vendedor"
                                           : "outros";
 
-                            <tr>
+                            var rowId = "row-" + u.UsuarioId;
+                            var expId = "exp-" + u.UsuarioId;
+
+                            <tr class="tr-main" id="@rowId" onclick="toggleRow('@rowId','@expId')">
+                                <td style="padding-left:20px;">
+                                    <div class="expand-chevron">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                            <polyline points="6 9 12 15 18 9" />
+                                        </svg>
+                                    </div>
+                                </td>
                                 <td>
                                     <span class="row-avatar">@(u.Name?.Length > 0 ? u.Name[0].ToString().ToUpper() : "?")</span>
                                     @u.Name
                                 </td>
                                 <td class="td-muted">@u.Email</td>
-                                <td>
-                                    <span class="role-badge @roleClass">@(u.Role ?? "—")</span>
-                                </td>
+                                <td><span class="role-badge @roleClass">@(u.Role ?? "—")</span></td>
                                 <td>
                                     <span class="status-badge @(u.Ativo ? "ativo" : "inativo")">
                                         <span class="status-dot"></span>
                                         @(u.Ativo ? "Ativo" : "Inativo")
                                     </span>
+                                </td>
+                            </tr>
+
+                            <!-- LINHA EXPANSIVA -->
+                            <tr class="tr-expand" id="@expId">
+                                <td colspan="5">
+                                    <div class="expand-panel">
+                                        <div class="expand-details">
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">ID</span>
+                                                <span class="expand-value">#@u.UsuarioId</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">Nome completo</span>
+                                                <span class="expand-value">@u.Name</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">E-mail</span>
+                                                <span class="expand-value">@u.Email</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">Cargo</span>
+                                                <span class="expand-value">@(u.Role ?? "—")</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">Empresa ID</span>
+                                                <span class="expand-value">@u.EmpresaId</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">Status</span>
+                                                <span class="expand-value">@(u.Ativo ? "Ativo" : "Inativo")</span>
+                                            </div>
+
+                                            <div class="expand-field">
+                                                <span class="expand-label">Senha</span>
+                                                <span class="expand-value" style="display:flex;align-items:center;gap:7px;">
+                                                    <span id="senha-@u.UsuarioId" data-senha="@u.SenhaHash">••••••••</span>
+                                                    <button class="btn-reveal"
+                                                            onclick="event.stopPropagation(); toggleSenha('@u.UsuarioId')"
+                                                            title="Mostrar/ocultar senha">
+                                                        <svg id="olho-@u.UsuarioId" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                                            <circle cx="12" cy="12" r="3" />
+                                                        </svg>
+                                                    </button>
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="expand-actions">
+                                            <button class="btn-act btn-act-edit"
+                                                    onclick="event.stopPropagation(); abrirEditar('@u.UsuarioId','@u.Name','@u.Email','@u.Role','@u.Ativo')">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                                </svg>
+                                                Editar
+                                            </button>
+                                            <button class="btn-act btn-act-delete"
+                                                    onclick="event.stopPropagation(); abrirExcluir('@u.UsuarioId','@u.Name')">
+                                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                    <polyline points="3 6 5 6 21 6" />
+                                                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                                                    <path d="M9 6V4h6v2" />
+                                                </svg>
+                                                Excluir
+                                            </button>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         }
@@ -586,6 +1036,145 @@
         </div>
 
     </main>
+
+    <!-- MODAL EDITAR -->
+    <div class="modal-overlay" id="modalEditar" onclick="fecharFora(event,'modalEditar')">
+        <div class="modal">
+            <button class="modal-close" onclick="fechar('modalEditar')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-title">Editar Funcionário</div>
+            <div class="modal-sub">Atualize os dados do cadastro</div>
+            <div class="modal-divider"></div>
+
+            <form method="POST" action="/Usuario/Edit">
+                <input type="hidden" id="editId" name="UsuarioId" value="" />
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Nome</label>
+                    <input type="text" id="editNome" name="Name" class="modal-input" placeholder="Nome completo" required />
+                </div>
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label">E-mail</label>
+                    <input type="email" id="editEmail" name="Email" class="modal-input" placeholder="email@empresa.com" required />
+                </div>
+
+                <div class="modal-row-2">
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Cargo</label>
+                        <select id="editRole" name="Role" class="modal-input">
+                            <option value="Admin">Admin</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Funcionario">Funcionário</option>
+                        </select>
+                    </div>
+                    <div class="modal-form-group">
+                        <label class="modal-form-label">Status</label>
+                        <select id="editAtivo" name="Ativo" class="modal-input">
+                            <option value="true">Ativo</option>
+                            <option value="false">Inativo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn-cancel" onclick="fechar('modalEditar')">Cancelar</button>
+                    <button type="submit" class="modal-btn-submit">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL EXCLUIR -->
+    <div class="modal-overlay" id="modalExcluir" onclick="fecharFora(event,'modalExcluir')">
+        <div class="modal" style="max-width:380px;text-align:center;">
+            <button class="modal-close" onclick="fechar('modalExcluir')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+            <div class="modal-danger-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6" />
+                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                    <path d="M9 6V4h6v2" />
+                </svg>
+            </div>
+            <div class="modal-title">Excluir funcionário?</div>
+            <div class="modal-sub" id="excluirNome" style="margin-top:4px;"></div>
+            <p style="font-size:13px;color:var(--faint);margin:10px 0 22px;">Esta ação não pode ser desfeita.</p>
+
+            <form method="POST" action="/Usuario/Delete">
+                <input type="hidden" id="excluirId" name="usuarioId" value="" />
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn-cancel" onclick="fechar('modalExcluir')">Cancelar</button>
+                    <button type="submit" class="modal-btn-delete">Sim, excluir</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleRow(rowId, expId) {
+            var row = document.getElementById(rowId);
+            var exp = document.getElementById(expId);
+            var isOpen = exp.classList.contains('open');
+
+            document.querySelectorAll('.tr-expand.open').forEach(function (el) { el.classList.remove('open'); });
+            document.querySelectorAll('.tr-main.expanded').forEach(function (el) { el.classList.remove('expanded'); });
+
+            if (!isOpen) {
+                exp.classList.add('open');
+                row.classList.add('expanded');
+            }
+        }
+
+        function toggleSenha(id) {
+            var span = document.getElementById('senha-' + id);
+            var olho = document.getElementById('olho-' + id);
+            if (span.textContent === '••••••••') {
+                span.textContent = span.getAttribute('data-senha');
+                olho.innerHTML = '<path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/><path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/><line x1="1" y1="1" x2="23" y2="23"/>';
+            } else {
+                span.textContent = '••••••••';
+                olho.innerHTML = '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>';
+            }
+        }
+
+        function abrirEditar(id, nome, email, role, ativo) {
+            document.getElementById('editId').value = id;
+            document.getElementById('editNome').value = nome;
+            document.getElementById('editEmail').value = email;
+            document.getElementById('editRole').value = role;
+            document.getElementById('editAtivo').value = (ativo === 'True' || ativo === 'true') ? 'true' : 'false';
+            fechar('modalExcluir');
+            abrir('modalEditar');
+        }
+
+        function abrirExcluir(id, nome) {
+            document.getElementById('excluirId').value = id;
+            document.getElementById('excluirNome').textContent = nome;
+            fechar('modalEditar');
+            abrir('modalExcluir');
+        }
+
+        function abrir(id) { document.getElementById(id).classList.add('open'); }
+        function fechar(id) { document.getElementById(id).classList.remove('open'); }
+
+        function fecharFora(e, id) {
+            if (e.target === document.getElementById(id)) fechar(id);
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') ['modalEditar', 'modalExcluir'].forEach(fechar);
+        });
+    </script>
 
 </body>
 </html>

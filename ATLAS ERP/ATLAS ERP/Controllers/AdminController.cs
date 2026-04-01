@@ -11,41 +11,36 @@ namespace ATLAS_ERP.Controllers
     {
         private readonly AtlasContext db = new AtlasContext();
 
-        // SOMENTE ADMIN E GERENTE
         [RoleFilter("Admin", "Gerente")]
         public ActionResult Dashboard()
         {
+            int empresaId = (int)Session["EmpresaId"];
             var hoje = DateTime.Today;
 
-            //  Vendas hoje
-            var vendasHoje = db.Vendas
-                .Where(v => v.DataVenda >= hoje)
-                .Sum(v => (decimal?)v.Total) ?? 0;
+            ViewBag.VendasHoje = db.Vendas
+                                       .Where(v => v.EmpresaId == empresaId && v.DataVenda >= hoje)
+                                       .Sum(v => (decimal?)v.Total) ?? 0;
 
-            //  Total produtos
-            var totalProdutos = db.Produtos.Count();
+            ViewBag.TotalVendasDia = db.Vendas
+                                       .Where(v => v.EmpresaId == empresaId && v.DataVenda >= hoje)
+                                       .Count();
 
-            //  Total clientes
-            var totalClientes = db.Clientes.Count();
+            ViewBag.TotalProdutos = db.Produtos
+                                       .Where(p => p.EmpresaId == empresaId)
+                                       .Count();
 
-            //  Total vendas do dia
-            var totalVendasDia = db.Vendas
-                .Where(v => v.DataVenda >= hoje)
-                .Count();
+            ViewBag.TotalClientes = db.Clientes
+                                       .Where(c => c.EmpresaId == empresaId)
+                                       .Count();
 
-            //  Últimas vendas
-            var ultimasVendas = db.Vendas
-                .Include(v => v.Cliente)
-                .OrderByDescending(v => v.DataVenda)
-                .Take(10)
-                .ToList();
+            ViewBag.UltimasVendas = db.Vendas
+                                       .Include(v => v.Cliente)
+                                       .Where(v => v.EmpresaId == empresaId)
+                                       .OrderByDescending(v => v.DataVenda)
+                                       .Take(10)
+                                       .ToList();
 
-            // ViewBag (mantendo simples por enquanto)
-            ViewBag.VendasHoje = vendasHoje;
-            ViewBag.TotalProdutos = totalProdutos;
-            ViewBag.TotalClientes = totalClientes;
-            ViewBag.TotalVendasDia = totalVendasDia;
-            ViewBag.UltimasVendas = ultimasVendas;
+            ViewBag.Empresa = db.Empresas.Find(empresaId);
 
             return View();
         }

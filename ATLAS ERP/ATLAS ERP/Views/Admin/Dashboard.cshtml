@@ -7,6 +7,8 @@
     int totalProd = ViewBag.TotalProdutos ?? 0;
     int totalCli = ViewBag.TotalClientes ?? 0;
     int totalVendDia = ViewBag.TotalVendasDia ?? 0;
+
+    var empresa = ViewBag.Empresa as ATLAS_ERP.Models.Empresa;
 }
 
 <!DOCTYPE html>
@@ -17,10 +19,6 @@
     <title>Atlas ERP – Dashboard</title>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     <style>
-
-        /* ========================
-           VARIAVEIS GLOBAIS
-        ======================== */
         :root {
             --bg: #050d1a;
             --panel: #0b1525;
@@ -45,9 +43,6 @@
             --radius: 14px;
         }
 
-        /* ========================
-           RESET
-        ======================== */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -66,9 +61,6 @@
             min-height: 100vh;
         }
 
-        /* ========================
-           FUNDO GEOMETRICO
-        ======================== */
         .bg-layer {
             position: fixed;
             inset: 0;
@@ -107,9 +99,7 @@
             filter: blur(70px);
         }
 
-        /* ========================
-           SIDEBAR
-        ======================== */
+        /* SIDEBAR */
         .sidebar {
             width: var(--sidebar-w);
             height: 100vh;
@@ -130,6 +120,11 @@
             padding: 0 8px;
             margin-bottom: 36px;
         }
+
+            .sidebar-logo a {
+                display: flex;
+                align-items: center;
+            }
 
             .sidebar-logo img {
                 width: 110px;
@@ -164,6 +159,11 @@
             margin-bottom: 2px;
             transition: background 0.18s, color 0.18s;
             position: relative;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
         }
 
             .menu-item svg {
@@ -236,7 +236,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Syne', sans-serif;
+            font-family: 'Syne',sans-serif;
             font-size: 13px;
             font-weight: 700;
             color: var(--accent-light);
@@ -257,9 +257,7 @@
             color: var(--faint);
         }
 
-        /* ========================
-           CONTEUDO PRINCIPAL
-        ======================== */
+        /* MAIN */
         .main {
             margin-left: var(--sidebar-w);
             flex: 1;
@@ -276,7 +274,7 @@
         }
 
         .page-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Syne',sans-serif;
             font-size: 22px;
             font-weight: 700;
         }
@@ -326,12 +324,10 @@
                 height: 14px;
             }
 
-        /* ========================
-           CARDS DE METRICAS
-        ======================== */
+        /* METRICAS */
         .metrics-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(4,1fr);
             gap: 16px;
             margin-bottom: 24px;
             animation: fadeUp 0.5s ease both;
@@ -422,7 +418,7 @@
         }
 
         .metric-value {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Syne',sans-serif;
             font-size: 26px;
             font-weight: 700;
             color: var(--text);
@@ -435,9 +431,7 @@
             margin-top: 6px;
         }
 
-        /* ========================
-           TABELA DE VENDAS
-        ======================== */
+        /* TABELA */
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 280px;
@@ -461,7 +455,7 @@
         }
 
         .table-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Syne',sans-serif;
             font-size: 15px;
             font-weight: 700;
         }
@@ -548,9 +542,7 @@
             font-size: 13px;
         }
 
-        /* ========================
-           COLUNA LATERAL
-        ======================== */
+        /* LATERAL */
         .side-col {
             display: flex;
             flex-direction: column;
@@ -565,7 +557,7 @@
         }
 
         .quick-title {
-            font-family: 'Syne', sans-serif;
+            font-family: 'Syne',sans-serif;
             font-size: 13px;
             font-weight: 700;
             margin-bottom: 12px;
@@ -615,9 +607,316 @@
                 margin-top: 2px;
             }
 
-        /* ========================
-           ANIMACAO
-        ======================== */
+        /* MODAL CONFIGURACOES */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+            .modal-overlay.open {
+                display: flex;
+            }
+
+        .modal {
+            background: var(--card);
+            border: 1px solid var(--border-md);
+            border-radius: 18px;
+            padding: 32px 36px;
+            width: 100%;
+            max-width: 480px;
+            position: relative;
+            animation: fadeUp 0.25s ease both;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--muted);
+            transition: background 0.15s, color 0.15s;
+        }
+
+            .modal-close:hover {
+                background: var(--red-soft);
+                color: var(--red);
+            }
+
+            .modal-close svg {
+                width: 14px;
+                height: 14px;
+            }
+
+        .modal-title {
+            font-family: 'Syne',sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .modal-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 22px;
+        }
+
+        .modal-divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 22px;
+        }
+
+        /* empresa info no topo do modal */
+        .empresa-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            margin-bottom: 22px;
+        }
+
+        .empresa-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: var(--accent-soft);
+            border: 1px solid var(--border-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne',sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--accent-light);
+            flex-shrink: 0;
+        }
+
+        .empresa-nome {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .empresa-cnpj {
+            font-size: 12px;
+            color: var(--faint);
+            margin-top: 2px;
+        }
+
+        .modal-form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal-form-label {
+            display: block;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 7px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-input {
+            width: 100%;
+            height: 42px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 0 14px;
+            font-family: 'DM Sans',sans-serif;
+            font-size: 14px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            -webkit-appearance: none;
+        }
+
+            .modal-input::placeholder {
+                color: var(--faint);
+            }
+
+            .modal-input:hover {
+                border-color: var(--border-md);
+            }
+
+            .modal-input:focus {
+                border-color: var(--accent);
+                box-shadow: 0 0 0 3px var(--accent-glow);
+            }
+
+        /* upload de logo */
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s;
+            position: relative;
+        }
+
+            .upload-area:hover {
+                border-color: var(--accent);
+                background: rgba(59,130,246,0.04);
+            }
+
+            .upload-area input {
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+                cursor: pointer;
+                width: 100%;
+            }
+
+        .upload-icon {
+            color: var(--faint);
+            margin-bottom: 8px;
+        }
+
+            .upload-icon svg {
+                width: 28px;
+                height: 28px;
+            }
+
+        .upload-text {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .upload-hint {
+            font-size: 11px;
+            color: var(--faint);
+            margin-top: 4px;
+        }
+
+        .upload-preview {
+            display: none;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 14px;
+            border-radius: 9px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            margin-top: 10px;
+        }
+
+            .upload-preview.visible {
+                display: flex;
+            }
+
+            .upload-preview img {
+                width: 36px;
+                height: 36px;
+                object-fit: contain;
+                border-radius: 6px;
+            }
+
+        .upload-preview-name {
+            font-size: 13px;
+            color: var(--text);
+            flex: 1;
+        }
+
+        .upload-preview-remove {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--faint);
+            padding: 0;
+            display: flex;
+            transition: color 0.15s;
+        }
+
+            .upload-preview-remove:hover {
+                color: var(--red);
+            }
+
+            .upload-preview-remove svg {
+                width: 14px;
+                height: 14px;
+            }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 24px;
+        }
+
+        .modal-btn-submit {
+            flex: 1;
+            height: 44px;
+            background: var(--accent);
+            border: none;
+            border-radius: 9px;
+            font-family: 'Syne',sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+        }
+
+            .modal-btn-submit:hover {
+                background: #2563eb;
+                transform: translateY(-1px);
+            }
+
+        .modal-btn-cancel {
+            height: 44px;
+            padding: 0 20px;
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--muted);
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+
+            .modal-btn-cancel:hover {
+                background: var(--card-hover);
+                color: var(--text);
+            }
+
+        /* sucesso */
+        .alert-success {
+            background: var(--green-soft);
+            border: 1px solid rgba(52,211,153,0.2);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .alert-success svg {
+                width: 14px;
+                height: 14px;
+                flex-shrink: 0;
+            }
+
         @@keyframes fadeUp {
             from {
                 opacity: 0;
@@ -630,22 +929,19 @@
             }
         }
 
-        /* ========================
-           RESPONSIVO
-        ======================== */
-        @@media (max-width: 1100px) {
+        @@media (max-width:1100px) {
             .metrics-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2,1fr);
             }
         }
 
-        @@media (max-width: 900px) {
+        @@media (max-width:900px) {
             .bottom-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        @@media (max-width: 700px) {
+        @@media (max-width:700px) {
             .sidebar {
                 display: none;
             }
@@ -672,12 +968,14 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-logo">
-            <img src="~/Content/images/Logo_atlas.png" alt="Atlas ERP" />
+            <a href="/Admin/Dashboard">
+                <img src="~/Content/images/Logo_atlas.png" alt="Atlas ERP" />
+            </a>
         </div>
 
         <span class="menu-label">Principal</span>
 
-        <a href="#" class="menu-item active">
+        <a href="/Admin/Dashboard" class="menu-item active">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
                 <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -725,6 +1023,15 @@
         <div class="sidebar-divider"></div>
         <span class="menu-label">Sistema</span>
 
+        <!-- CONFIGURACOES — abre modal -->
+        <button class="menu-item" onclick="abrirConfig()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14" />
+            </svg>
+            Configurações
+        </button>
+
         <a href="/Auth/Logout" class="menu-item danger">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
@@ -744,7 +1051,7 @@
             <div class="user-avatar">@inicial</div>
             <div>
                 <div class="user-name">@nomeUsuario</div>
-                <div class="user-role">Administrador</div>
+                <div class="user-role">@(Session["Role"]?.ToString() ?? "Usuário")</div>
             </div>
         </div>
     </aside>
@@ -770,9 +1077,8 @@
             </div>
         </div>
 
-        <!-- METRICAS REAIS DO BANCO -->
+        <!-- METRICAS -->
         <div class="metrics-grid">
-
             <div class="metric-card blue">
                 <div class="metric-icon blue">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -820,12 +1126,10 @@
                 <div class="metric-value">@totalVendDia</div>
                 <div class="metric-sub">ordens processadas</div>
             </div>
-
         </div>
 
         <!-- TABELA + LATERAL -->
         <div class="bottom-grid">
-
             <div class="table-card">
                 <div class="table-header">
                     <span class="table-title">Últimas Vendas</span>
@@ -873,48 +1177,24 @@
             <div class="side-col">
                 <div class="quick-card">
                     <div class="quick-title">Atalhos Rápidos</div>
-
                     <a href="/Produto/Create" class="quick-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="8" x2="12" y2="16" />
-                            <line x1="8" y1="12" x2="16" y2="12" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
                         Novo Produto
                     </a>
-
                     <a href="/Cliente/Create" class="quick-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10" />
-                            <line x1="12" y1="8" x2="12" y2="16" />
-                            <line x1="8" y1="12" x2="16" y2="12" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="16" /><line x1="8" y1="12" x2="16" y2="12" /></svg>
                         Novo Cliente
                     </a>
-
                     <a href="/Usuario/Create" class="quick-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                            <circle cx="12" cy="7" r="4" />
-                            <line x1="19" y1="8" x2="19" y2="14" />
-                            <line x1="22" y1="11" x2="16" y2="11" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /><line x1="19" y1="8" x2="19" y2="14" /><line x1="22" y1="11" x2="16" y2="11" /></svg>
                         Novo Funcionário
                     </a>
-
                     <a href="/Produto" class="quick-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                            <polyline points="14 2 14 8 20 8" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>
                         Ver Produtos
                     </a>
-
                     <a href="/Cliente" class="quick-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                        </svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /></svg>
                         Ver Clientes
                     </a>
                 </div>
@@ -928,14 +1208,134 @@
                     <span>Verifique produtos com estoque baixo antes de realizar novas vendas.</span>
                 </div>
             </div>
-
         </div>
+
     </main>
+
+    <!-- MODAL CONFIGURACOES -->
+    <div class="modal-overlay" id="modalConfig" onclick="fecharFora(event)">
+        <div class="modal">
+            <button class="modal-close" onclick="fecharConfig()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
+
+            <div class="modal-title">Configurações da Empresa</div>
+            <div class="modal-sub">Atualize as informações da sua empresa</div>
+            <div class="modal-divider"></div>
+
+            @if (ViewBag.ConfigSucesso != null)
+            {
+                <div class="alert-success">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    @ViewBag.ConfigSucesso
+                </div>
+            }
+
+            <!-- info atual da empresa -->
+            @if (empresa != null)
+            {
+                <div class="empresa-info">
+                    <div class="empresa-avatar">
+                        @(empresa.Nome?.Length > 0 ? empresa.Nome[0].ToString().ToUpper() : "E")
+                    </div>
+                    <div>
+                        <div class="empresa-nome">@empresa.Nome</div>
+                        <div class="empresa-cnpj">CNPJ: @empresa.CNPJ</div>
+                    </div>
+                </div>
+            }
+
+            <form method="POST" action="/Empresa/Configuracoes" enctype="multipart/form-data">
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label">E-mail da Empresa</label>
+                    <input type="email" name="Email" class="modal-input"
+                           placeholder="contato@suaempresa.com"
+                           value="@(empresa != null ? empresa.Email : "")" />
+                </div>
+
+                <div class="modal-form-group">
+                    <label class="modal-form-label">Logo da Empresa</label>
+                    <div class="upload-area" id="uploadArea">
+                        <input type="file" name="Logo" accept="image/*" id="logoInput" onchange="previewLogo(this)" />
+                        <div class="upload-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="17 8 12 3 7 8" />
+                                <line x1="12" y1="3" x2="12" y2="15" />
+                            </svg>
+                        </div>
+                        <div class="upload-text">Clique para selecionar uma imagem</div>
+                        <div class="upload-hint">PNG, JPG ou SVG — máx. 2MB</div>
+                    </div>
+                    <div class="upload-preview" id="uploadPreview">
+                        <img id="previewImg" src="" alt="preview" />
+                        <span class="upload-preview-name" id="previewName"></span>
+                        <button type="button" class="upload-preview-remove" onclick="removerLogo()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="18" y1="6" x2="6" y2="18" />
+                                <line x1="6" y1="6" x2="18" y2="18" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="modal-btn-cancel" onclick="fecharConfig()">Cancelar</button>
+                    <button type="submit" class="modal-btn-submit">Salvar alterações</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script>
         var d = new Date();
-        var opts = { weekday: 'short', day: '2-digit', month: 'short', year: 'numeric' };
+        var opts = { weekday:'short', day:'2-digit', month:'short', year:'numeric' };
         document.getElementById('dataAtual').textContent = d.toLocaleDateString('pt-BR', opts);
+
+        function abrirConfig() {
+            document.getElementById('modalConfig').classList.add('open');
+        }
+
+        function fecharConfig() {
+            document.getElementById('modalConfig').classList.remove('open');
+        }
+
+        function fecharFora(e) {
+            if (e.target === document.getElementById('modalConfig')) fecharConfig();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') fecharConfig();
+        });
+
+        function previewLogo(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('previewImg').src    = e.target.result;
+                    document.getElementById('previewName').textContent = input.files[0].name;
+                    document.getElementById('uploadPreview').classList.add('visible');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function removerLogo() {
+            document.getElementById('logoInput').value = '';
+            document.getElementById('uploadPreview').classList.remove('visible');
+        }
+
+        // abrir modal se voltou com sucesso
+        @if (ViewBag.ConfigSucesso != null)
+        {
+            <text>window.onload = function() { abrirConfig(); };</text>
+        }
     </script>
 
 </body>

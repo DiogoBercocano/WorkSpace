@@ -6,26 +6,27 @@ namespace ATLAS_ERP.Controllers
 {
     public class AuthController : Controller
     {
-        private AtlasContext db = new AtlasContext();
+        private readonly AtlasContext db = new AtlasContext();
 
-        // GET: /Auth/Login
+        // GET
         public ActionResult Login()
         {
             if (Session["UsuarioLogado"] != null)
             {
                 var role = Session["Role"]?.ToString();
 
+                if (role == "SuperAdmin")
+                    return RedirectToAction("Index", "SuperAdmin");
+
                 if (role == "Admin" || role == "Gerente")
                     return RedirectToAction("Dashboard", "Admin");
 
-                if (role == "Vendedor")
-                    return RedirectToAction("Index", "Produto");
+                return RedirectToAction("Index", "Produto");
             }
-
             return View();
         }
 
-        // POST: /Auth/Login
+        // POST
         [HttpPost]
         public ActionResult Login(string email, string senha)
         {
@@ -39,26 +40,23 @@ namespace ATLAS_ERP.Controllers
             {
                 Session["UsuarioLogado"] = user.Name;
                 Session["UsuarioId"] = user.UsuarioId;
-                Session["EmpresaId"] = user.EmpresaId;
                 Session["Role"] = user.Role;
 
-                var role = user.Role;
+                if (user.EmpresaId.HasValue)
+                    Session["EmpresaId"] = user.EmpresaId.Value;
+                else
+                    Session["EmpresaId"] = null;
 
-                if (role == "Admin" || role == "Gerente")
-                {
+                if (user.Role == "SuperAdmin")
+                    return RedirectToAction("Index", "SuperAdmin");
+
+                if (user.Role == "Admin" || user.Role == "Gerente")
                     return RedirectToAction("Dashboard", "Admin");
-                }
 
-                if (role == "Vendedor")
-                {
-                    return RedirectToAction("Index", "Produto");
-                }
-
-                // fallback
-                return RedirectToAction("Login", "Auth");
+                return RedirectToAction("Index", "Produto");
             }
 
-            ViewBag.Erro = "E-mail ou senha inválidos!";
+            ViewBag.Erro = "E-mail ou senha inválidos.";
             return View();
         }
 

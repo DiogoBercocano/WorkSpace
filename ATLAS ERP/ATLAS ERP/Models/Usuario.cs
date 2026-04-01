@@ -26,7 +26,7 @@ namespace ATLAS_ERP.Models
 
 
         [ForeignKey("Empresa")]
-        public int EmpresaId { get; set; }
+        public int? EmpresaId { get; set; }
         public Empresa Empresa { get; set; }
     }
 }
