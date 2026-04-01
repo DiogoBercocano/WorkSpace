@@ -45,7 +45,9 @@ namespace ATLAS_ERP.Controllers
 
         [HttpPost]
         [RoleFilter("Admin", "Gerente")]
-        public ActionResult Edit(int ClienteId, string Nome, string Documento, string Email, decimal LimiteCredito, bool Ativo)
+        public ActionResult Edit(int ClienteId, string Nome, string Documento,
+                         string Email, string Telefone, string Endereco,
+                         decimal? LimiteCredito, string Ativo)
         {
             var c = db.Clientes
                       .FirstOrDefault(x => x.ClienteId == ClienteId && x.EmpresaId == EmpresaId);
@@ -54,8 +56,10 @@ namespace ATLAS_ERP.Controllers
                 c.Nome = Nome;
                 c.Documento = Documento;
                 c.Email = Email;
-                c.LimiteCredito = LimiteCredito;
-                c.Ativo = Ativo;
+                c.Telefone = Telefone;
+                c.Endereco = Endereco;
+                c.LimiteCredito = LimiteCredito ?? 0;
+                c.Ativo = Ativo == "true";
                 db.Entry(c).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
+using static System.Data.Entity.Migrations.Model.UpdateDatabaseOperation;
 
 namespace ATLAS_ERP.Models
 {
@@ -19,7 +16,12 @@ namespace ATLAS_ERP.Models
         [EmailAddress]
         public string Email { get; set; }
 
+        public string Telefone { get; set; }
+
+        public string Endereco { get; set; }
+
         public decimal LimiteCredito { get; set; }
+
         public bool Ativo { get; set; }
 
         [ForeignKey("Empresa")]

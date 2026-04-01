@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\CoffeWeb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\CoffeWeb\\coffeeweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|c:\\users\\dgber\\documents\\github\\workspace\\coffeweb\\coffeeweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|solutionrelative:coffeeweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|solutionrelative:coffeeweb\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|c:\\users\\dgber\\documents\\github\\workspace\\coffeweb\\coffeeweb\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "AbsoluteMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\CoffeWeb\\coffeeweb\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{E4A459A9-898F-4A3F-B206-0863E5B2FA50}|CoffeeWeb\\CoffeeWeb.csproj|solutionrelative:coffeeweb\\content\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
@@ -74,8 +74,7 @@
               "RelativeToolTip": "CoffeeWeb\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T23:38:08.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T23:38:08.717Z"
             },
             {
               "$type": "Document",
@@ -87,8 +86,7 @@
               "RelativeToolTip": "CoffeeWeb\\Content\\Site.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2026-03-25T23:30:28.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T23:30:28.044Z"
             },
             {
               "$type": "Document",
@@ -100,8 +98,7 @@
               "RelativeToolTip": "CoffeeWeb\\Views\\Cardapio\\Index.cshtml",
               "ViewState": "AgIAAP4AAAAAAAAAAAAAwA8BAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-25T23:15:02.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T23:15:02.282Z"
             },
             {
               "$type": "Document",
@@ -111,7 +108,7 @@
               "RelativeDocumentMoniker": "CoffeeWeb\\Views\\Home\\Index.cshtml",
               "ToolTip": "C:\\Users\\dgber\\Documents\\GitHub\\WorkSpace\\CoffeWeb\\CoffeeWeb\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "CoffeeWeb\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAOkBAAAAAAAAAAAAwO0BAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAOkBAAAAAAAAAAAAwPYBAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-03-25T23:05:47.342Z",
               "EditorCaption": ""

@@ -164,6 +164,10 @@
     <Compile Include="Migrations\202604010401058_AddLogoPathEmpresa.Designer.cs">
       <DependentUpon>202604010401058_AddLogoPathEmpresa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202604011414241_AddTelefoneEnderecoCliente.cs" />
+    <Compile Include="Migrations\202604011414241_AddTelefoneEnderecoCliente.Designer.cs">
+      <DependentUpon>202604011414241_AddTelefoneEnderecoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\ContaReceber.cs" />
@@ -236,10 +240,11 @@
     <Content Include="Views\Produto\Index.cshtml" />
     <Content Include="Views\Empresa\Cadastro.cshtml" />
     <Content Include="Views\SuperAdmin\Index.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -286,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202604010401058_AddLogoPathEmpresa.resx">
       <DependentUpon>202604010401058_AddLogoPathEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202604011414241_AddTelefoneEnderecoCliente.resx">
+      <DependentUpon>202604011414241_AddTelefoneEnderecoCliente.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

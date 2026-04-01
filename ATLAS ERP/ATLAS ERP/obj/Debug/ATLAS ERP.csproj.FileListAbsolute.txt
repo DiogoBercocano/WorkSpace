@@ -95,3 +95,4 @@ C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ER
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.AddStatusEmpresa_EmpresaIdNullable.resources
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.EmpresaIdNullabl.resources
 C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.AddLogoPathEmpresa.resources
+C:\Users\dgber\Documents\GitHub\WorkSpace\ATLAS ERP\ATLAS ERP\obj\Debug\ATLAS_ERP.Migrations.AddTelefoneEnderecoCliente.resources
